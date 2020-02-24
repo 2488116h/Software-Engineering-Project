@@ -4,12 +4,12 @@ import java.io.PrintStream;
 
 public class User {
 	private String username;
-	private char[] password;
+	private String password;
 	private String name;	
 	private Date date;
 	private String NIN;
 	private boolean flag;
-	public User(String u, char[] p, String n, Date d, String NIN) {
+	public User(String u, String p, String n, Date d, String NIN) {
 		username = u;
 		password = p;
 		name = n;
@@ -21,7 +21,7 @@ public class User {
 		ps.print(String.format("Hi, "+name));
 	}
 	
-	public char[] getPassword() {
+	public String getPassword() {
 		return password;
 	}	
 	
