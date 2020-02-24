@@ -2,6 +2,7 @@ package User;
 
 import java.io.PrintStream;
 
+
 public class User {
 	private String username;
 	private String password;
@@ -30,5 +31,9 @@ public class User {
 	}
 	
 	
+	public String getUsername() {
+		return username;
+	}
+
 
 }

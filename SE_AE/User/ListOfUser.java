@@ -10,6 +10,24 @@ public class ListOfUser {
 		users = new ArrayList<User>();
 	}
 	
+	public void addUser(User user) {
+		users.add(user);
+	}
+	
+	public void removeUser(User user) {
+		users.remove(user);
+	}
+	
+	public int getSize() {
+		return users.size();
+	}
+	
+	public User getUser(int index) {
+		return users.get(index);
+		
+	}
+
+	
 	public void print(PrintStream ps) {
 		for(User u:users) {
 			u.print(ps);
