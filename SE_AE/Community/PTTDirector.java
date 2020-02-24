@@ -23,6 +23,13 @@ public class PTTDirector extends User{
 		request.setReqStatus(request.status[2]);
 	}
 	
+//	public boolean equals(Object user) {
+//		
+//		if(user instanceof PTTDirector) return true;
+//		return false;
+//		
+//	}
+	
 	public void print(PrintStream ps) {
 		super.print(ps);
 		ps.print(" PPT Director");

@@ -18,7 +18,7 @@ public class ClassRequest {
 		HashMap<String,String> req=new HashMap<>();
 		req.put("Title", reqTitle);
 		req.put("Description", reqDetail);
-		reqStatus=status[1];
+		reqStatus=status[0];
 		req.put("Status", reqStatus);
 	}
 
@@ -32,7 +32,7 @@ public class ClassRequest {
 	}
 	
 	public void print(PrintStream ps) {
-		ps.println(reqTitle+"\n-----\n"+reqDetail+"\n-----\n"+reqStatus);
+		ps.println("Title: "+reqTitle+"\nDesicription:\n"+reqDetail+"\nStatus: "+reqStatus);
 	}
 	
 	

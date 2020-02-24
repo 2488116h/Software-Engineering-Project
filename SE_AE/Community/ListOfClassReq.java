@@ -1,5 +1,6 @@
 package Community;
 
+
 import java.util.ArrayList;
 
 public class ListOfClassReq {
@@ -32,5 +33,14 @@ public class ListOfClassReq {
 		return submittedList;
 	}
 	
+	public ArrayList<ClassRequest> getListOfCR(){
+		return ListOfCR;
+	}
+	
+	public void print(ArrayList<ClassRequest> list) {
+		for(ClassRequest req:list) {
+			req.print(System.out);
+		}
+	}
 
 }

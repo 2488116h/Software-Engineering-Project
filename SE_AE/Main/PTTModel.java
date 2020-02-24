@@ -8,45 +8,44 @@ import Community.ListOfClassReq;
 import Community.PTTDirector;
 import User.Date;
 import User.ListOfUser;
-import User.User;
+
 
 public class PTTModel {
 	private ClassDirector classDir;
 	private PTTDirector PTTDir;
-	private ListOfUser users;
-	private ListOfClassReq requests;
+	private ListOfUser users =new ListOfUser();
+	private ListOfClassReq requests=new ListOfClassReq();
+//	private ListOfClassReq surequests;
 	
 	public PTTModel() {
-		classDir=new ClassDirector("use01","123456","Jam",new Date(01,01,1999),"S123456");
-		PTTDir=new PTTDirector("use02","123456","Tommy",new Date(01,04,1989),"S123488");
+		classDir=new ClassDirector("user01","1","Jam",new Date(01,01,1999),"S123456");
+		PTTDir=new PTTDirector("user02","1","Tommy",new Date(01,04,1989),"S123488");
 		users.addUser(classDir);
 		users.addUser(PTTDir);
 	}
 	
-	public boolean login(String username,String password) {
-		boolean isLogin=false;
+	public int login(String username,String password) {
+		int isLogin=0;
 		for(int i =0;i<users.getSize();i++) {
 			if(username.equals(users.getUser(i).getUsername())&& password.equals(users.getUser(i).getPassword())) {
-				isLogin=true;
+				if(users.getUser(i) instanceof ClassDirector) {
+					isLogin=1;
+				}else if(users.getUser(i) instanceof PTTDirector) {
+					isLogin=2;
+				}		
 			}
 		}	
 		return isLogin;
 	}
 	
-	public int roleOfUser(Object user) {
-		int role=0;
-		if(user instanceof ClassDirector) {
-			role=1;
-		}else if(user instanceof PTTDirector){
-			role=2;
-		}
-		return role;
-		
-	}
-	
+
 	
 	public void creatRequest(String reqTitle,String reqDetail) {	
 		requests.add(new ClassRequest(reqTitle,reqDetail));
+	}
+	
+	public ListOfClassReq getRequests() {
+		return requests;
 	}
 	
 	public void approval(int choice) {
