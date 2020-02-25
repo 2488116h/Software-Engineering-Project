@@ -32,5 +32,15 @@ public class ListOfClassReq {
 		return submittedList;
 	}
 	
+	// print out the list with all class requests
+	public String toString() {
+		String output = "";
+		for(int i=0;i<ListOfCR.size();i++) {
+			output = output + ListOfCR.get(i).toString() + "\n";
+		}
+		return output;
+	}
 
+	
+	
 }

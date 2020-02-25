@@ -35,6 +35,12 @@ public class ClassRequest {
 		ps.println(reqTitle+"\n-----\n"+reqDetail+"\n-----\n"+reqStatus);
 	}
 	
-	
+	// @override toString()
+	public String toString() {
+		String output1 = "Request Title: " + reqTitle + " ; ";
+		String output2 = "Request Detail: " + reqDetail + " ; ";
+		String output3 = "Request Status: " + reqStatus + ".";
+		return output1+output2+output3;
+	}
 
 }
