@@ -50,14 +50,15 @@ public class PTTModel {
 	
 	public void approval(int choice) {
 		if(choice==1) {
-			for(int i =0;i<requests.getSize();i++) 
+			for(int i =0;i<requests.submittedList().size();i++) 
 				requests.getClassReq(i).setReqStatus(ClassRequest.status[1]);
 
 		}else if(choice==2) {
-			for(int i =0;i<requests.getSize();i++) 
+			for(int i =0;i<requests.submittedList().size();i++) 
 				requests.getClassReq(i).setReqStatus(ClassRequest.status[2]);
 		}
 	}
+
 
 
 }

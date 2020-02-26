@@ -6,10 +6,13 @@ public class PTTController {
 	private PTTModel model;
 	private PTTView view;
 	private Scanner input;
+	private DataFile data;
 	
-	public PTTController(PTTModel model,PTTView view) {
+	public PTTController(PTTModel model,PTTView view, DataFile data) {
 		this.model=model;
 		this.view=view;
+		this.data=data;
+		data.readFile();
 
 	}
 	
@@ -44,8 +47,13 @@ public class PTTController {
 					
 			
 		}else if(menuNo==2 && role==2) {
+			if(model.getRequests().submittedList().size()==0) {
+				view.noRequest();
+				mainMenu(role);
+			}
 			view.approval_menu();
 			model.approval(input.nextInt());
+			data.classReqData();
 			mainMenu(role);
 			
 		}else if(menuNo==3) {
@@ -59,12 +67,13 @@ public class PTTController {
 		boolean flag=true;
 		input = new Scanner(System.in);
 		view.createReqTitle();
-		String title=input.nextLine();
+		String title=input.next();
 		view.createReqDetails();
-		String detail=input.nextLine();
+		String detail=input.next();
 		
 		model.creatRequest(title, detail);
 		view.submitteReq();
+		data.classReqData();
 		
 		if(input.nextInt()==1) {
 			this.createReq();

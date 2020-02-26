@@ -63,5 +63,9 @@ public class PTTView {
 		model.getRequests().print(model.getRequests().submittedList());
 		System.out.println("-------Select Menu------\n1.approve\n2.disapprove");
 	}
+	
+	public void noRequest() {
+		System.out.println("There is no submitted requests!");
+	}
 
 }
