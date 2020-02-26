@@ -8,8 +8,10 @@ public class User {
 	private String password;
 	private String name;	
 	private Date date;
+	// NIN = National Insurance Number (UK)
 	private String NIN;
 	private boolean flag;
+	
 	public User(String u, String p, String n, Date d, String NIN) {
 		username = u;
 		password = p;
@@ -30,10 +32,17 @@ public class User {
 		return name;
 	}
 	
-	
 	public String getUsername() {
 		return username;
 	}
-
+	
+	// setter: account name
+	public void setUsername(String u) {
+		username = u;
+	}
+	// setter: account password
+	public void setPassword(String p) {
+		password = p;
+	}
 
 }
