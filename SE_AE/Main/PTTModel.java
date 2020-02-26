@@ -71,21 +71,12 @@ public class PTTModel {
 		}
 	}
 
-	/*
-	 * -----------------------------------------------------
-	 * Class Director
-	 */
-	
-	// process of registering a teacher: check, create, add
-	public void registerTR(String teacherName) {
-		if(teachers.check(teacherName)) {
-			System.out.println(teacherName + "is already in the List.");
-		}else {
-			classDir.createTeacher(teacherName, teacherName, teacherName, null, teacherName);
-			System.out.println(teacherName + "is successfully added.");
-		}
+	// getters
+	public ListOfTeacher getTRs() {
+		return teachers;
 	}
-	
-	
+	public ListOfClassReq getCRs() {
+		return requests;
+	}
 
 }
