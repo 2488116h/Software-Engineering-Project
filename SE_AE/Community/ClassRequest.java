@@ -27,15 +27,6 @@ public class ClassRequest {
 		return reqStatus;
 	}
 
-	public String getReqTitle() {
-		return reqTitle;
-	}
-
-
-	public String getReqDetail() {
-		return reqDetail;
-	}
-
 
 	public void setReqStatus(String reqStatus) {
 		this.reqStatus = reqStatus;

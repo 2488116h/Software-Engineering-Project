@@ -31,22 +31,21 @@ public class PTTView {
 	public void menu(int role) {
 		String[] menu= {
 				"1.list all the class requests",
-				"2.create new class requirement",			
-				"2.check all the submitted requests",
-				"3.logout",
-				"1.check the teachers list",              //  Administrator functions
+				"2.check the teachers list",              
+				"3.create new class requirement",		  //  Class Director functions
+				"3.check all the submitted requests",     //  PTT Director functions
 				"3.find suitable teachers",               //  Administrator functions
 				"4.logout"                                //  Administrator functions
 				};
 		System.out.println("-------Select Menu------");
 		if(role==1) {
-			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[3]+"\n----\n"+"");
+			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[2]+"\n"+menu[5]+"\n----\n"+"");
 		
 		}else if(role==2){
-			System.out.println(menu[0]+"\n"+menu[2]+"\n"+menu[3]+"\n----\n"+"");
+			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[3]+"\n"+menu[5]+"\n----\n"+"");
 		}
 		else if(role==3){                                  // print Administrator functions
-			System.out.println(menu[4]+"\n"+menu[2]+"\n"+menu[5]+"/n"+menu[6]+"\n----\n"+"");
+			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[4]+"\n"+menu[5]+"\n----\n"+"");
 		}
 	}
 	
@@ -75,12 +74,34 @@ public class PTTView {
 	public void noRequest() {
 		System.out.println("There is no submitted requests!");
 	}
+	
+	public void listOfTeacher() {
+		System.out.println("-------List of Teacher------");
+		for(int i =0; i< model.getTeachers().getTeachersSize();i++) {
+			System.out.print(i+1+" ");
+			model.getTeachers().getTeacher(i).print(System.out);
+			System.out.println();
+		}
+		
+	}
+	
+	public void listOfSuitTeacher() {
+		System.out.println("-------List of Suitable Teacher------");
+		for(int i =0; i< model.getSuitTeachers().getTeachersSize();i++) {
+			System.out.print(i+1+" ");
+			model.getSuitTeachers().getTeacher(i).print(System.out);
+			System.out.println();
+		}
+		
+	}
 
 	public void createSuitTeacher() {
 		System.out.println("Please add a teacher to suitable teachers list:");
 	}
 	
-	
+	public void addedTeacher() {
+		System.out.println("-------Teacher added------\n add another teacher by input the index or enter '0' to return Main Menu");
+	}
 
 
 }

@@ -1,5 +1,7 @@
 package Community;
 
+import java.io.PrintStream;
+
 import User.*;
 public class Teacher extends User {
 	
@@ -12,6 +14,11 @@ public class Teacher extends User {
 	
 	public ListOfAttribute getAttributes() {
 		return attributes;
+	}
+	
+	public void print(PrintStream ps) {
+		super.print(ps);
+		
 	}
 
 }

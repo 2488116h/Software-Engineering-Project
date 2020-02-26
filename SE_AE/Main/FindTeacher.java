@@ -4,18 +4,18 @@ package Main;
 import Community.*;
 
 
-public class AdministratorControl {
+public class FindTeacher {// this class is useless
 	
-	private PTTModel listOfRequests;
+//	private PTTModel listOfRequests;
 	private ListOfTeacher teachers, suitTeachers;
 	
-	public AdministratorControl() {
+	public FindTeacher() {
 		suitTeachers=new ListOfTeacher();
 		
 	}
 	
 	public void createSuitTeacher(Teacher suitteacher) {
-		suitTeachers.addataeacher(suitteacher);
+		suitTeachers.addTeacher(suitteacher);
 	}
 	
 	public ListOfTeacher getTeachers() {
@@ -26,9 +26,9 @@ public class AdministratorControl {
 		return suitTeachers;
 	}
 	
-	public ListOfClassReq getRequsts() {
-		return listOfRequests.getRequests();
-	}
+//	public ListOfClassReq getRequsts() {
+//		return listOfRequests.getRequests();
+//	}
 	
 	
 

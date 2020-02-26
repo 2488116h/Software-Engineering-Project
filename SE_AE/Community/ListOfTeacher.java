@@ -11,15 +11,19 @@ public class ListOfTeacher {
 		teachers = new ArrayList<>();
 	}
 	
-	public void addataeacher(Teacher teacher) {
+	public void addTeacher(Teacher teacher) {
 		teachers.add(teacher);
 	}
 	
-	public ArrayList<Teacher> getSuitTeachers() {
+//	public ArrayList<Teacher> getSuitTeachers() {
+//		return teachers;
+//	}
+	
+	public ArrayList<Teacher> getTeachers() {
 		return teachers;
 	}
-	
-	public Teacher getaTeacher(int index) {
+
+	public Teacher getTeacher(int index) {
 		return teachers.get(index);
 	}
 	
@@ -34,5 +38,6 @@ public class ListOfTeacher {
 			System.out.print(s + " ");
 		}
 	}
+	
 
 }
