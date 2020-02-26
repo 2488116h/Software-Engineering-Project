@@ -15,15 +15,9 @@ import java.util.Scanner;
 
 public class ClassDirector extends User{
 	
-	private ListOfTeacher ListOfTRs;
-	private ListOfClassReq ListOfCR;
-	
 	// constructor
 	public ClassDirector(String u, String p, String n, Date d, String NIN) {
 		super(u, p, n, d, NIN);
-		// import data from database
-		//ListOfTRs = ;
-		//ListOfCR = ;
 	}
 
 //	public void creatClassReq() {
@@ -42,7 +36,7 @@ public class ClassDirector extends User{
 	}
 
 	// find this teacher 
-	public boolean find(String teacherName) {
+	public boolean find(String teacherName, ListOfTeacher ListOfTRs) {
 		return ListOfTRs.check(teacherName);
 	}
 	
@@ -53,29 +47,19 @@ public class ClassDirector extends User{
 	}
 	
 	// add a teacher in the list
-	public void createTeacher(Teacher tr) {
+	public void addTeacher(Teacher tr, ListOfTeacher ListOfTRs) {
 		ListOfTRs.add(tr);
 	}
 	
-	// check and register a teacher
-//	public void register(String teacherName) {
-//		if(ListOfTRs.check(teacherName)) {
-//			System.out.println(t.getName() + "is already in the List.");
-//		}else {
-//			createTeacher()
-//			System.out.println(t.getName() + "is successfully added.");
-//		}
-//	}
-	
 	// create a new class request and add it to the list of Request
-	public void createCR(String reqTitle,String reqDetail) {
+	public void createCR(String reqTitle, String reqDetail, ListOfClassReq ListOfCRs) {
 		ClassRequest classReq = new ClassRequest(reqTitle, reqDetail);
-		ListOfCR.add(classReq);
+		ListOfCRs.add(classReq);
 	}
 	
 	// print list of class requirement
-	public void printListOfCR(PrintStream ps) {
-			ps.print(ListOfCR.toString());
+	public void printListOfCR(PrintStream ps, ListOfClassReq ListOfCRs) {
+			ps.print(ListOfCRs.toString());
 	}
 	
 }

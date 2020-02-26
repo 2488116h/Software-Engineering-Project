@@ -4,6 +4,7 @@ public class PTTController {
 	private PTTModel model;
 	private PTTView view;
 	
+	// ??? Separate
 	public PTTController(PTTModel model,PTTView view) {
 		this.model=model;
 		this.view=view;
@@ -15,8 +16,6 @@ public class PTTController {
 		};
 	}
 	
-	//
-	
-	
+	// 
 
 }
