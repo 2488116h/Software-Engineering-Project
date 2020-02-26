@@ -9,19 +9,24 @@ import Community.PTTDirector;
 import User.Date;
 import User.ListOfUser;
 
+import Community.Administrator;
 
 public class PTTModel {
 	private ClassDirector classDir;
-	private PTTDirector PTTDir;
+	private PTTDirector PTTDir;	
 	private ListOfUser users =new ListOfUser();
 	private ListOfClassReq requests=new ListOfClassReq();
+	
+	private Administrator admin;
 //	private ListOfClassReq surequests;
 	
 	public PTTModel() {
 		classDir=new ClassDirector("user01","1","Jam",new Date(01,01,1999),"S123456");
 		PTTDir=new PTTDirector("user02","1","Tommy",new Date(01,04,1989),"S123488");
+		admin=new Administrator("user03","1","Ted",new Date(01,01,1990),"S132987");
 		users.addUser(classDir);
 		users.addUser(PTTDir);
+		users.addUser(admin);
 	}
 	
 	public int login(String username,String password) {
@@ -32,7 +37,10 @@ public class PTTModel {
 					isLogin=1;
 				}else if(users.getUser(i) instanceof PTTDirector) {
 					isLogin=2;
-				}		
+				}
+				else if(users.getUser(i) instanceof Administrator) {     // Administrator login
+					isLogin=3;
+				}
 			}
 		}	
 		return isLogin;

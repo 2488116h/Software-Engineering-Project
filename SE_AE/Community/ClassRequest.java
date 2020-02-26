@@ -46,5 +46,12 @@ public class ClassRequest {
 	}
 	
 	
+	public String getReqTitle() {
+		return reqTitle;
+	}
+	
+	public String getReqDetail() {
+		return reqDetail;
+	}
 
 }

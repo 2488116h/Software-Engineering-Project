@@ -33,13 +33,20 @@ public class PTTView {
 				"1.list all the class requests",
 				"2.create new class requirement",			
 				"2.check all the submitted requests",
-				"3.logout"};
+				"3.logout",
+				"1.check the teachers list",              //  Administrator functions
+				"3.find suitable teachers",               //  Administrator functions
+				"4.logout"                                //  Administrator functions
+				};
 		System.out.println("-------Select Menu------");
 		if(role==1) {
 			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[3]+"\n----\n"+"");
 		
-		}else{
+		}else if(role==2){
 			System.out.println(menu[0]+"\n"+menu[2]+"\n"+menu[3]+"\n----\n"+"");
+		}
+		else if(role==3){                                  // print Administrator functions
+			System.out.println(menu[4]+"\n"+menu[2]+"\n"+menu[5]+"/n"+menu[6]+"\n----\n"+"");
 		}
 	}
 	
@@ -64,8 +71,16 @@ public class PTTView {
 		System.out.println("-------Select Menu------\n1.approve\n2.disapprove");
 	}
 	
+
 	public void noRequest() {
 		System.out.println("There is no submitted requests!");
 	}
+
+	public void createSuitTeacher() {
+		System.out.println("Please add a teacher to suitable teachers list:");
+	}
+	
+	
+
 
 }
