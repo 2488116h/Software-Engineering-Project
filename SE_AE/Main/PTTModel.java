@@ -65,12 +65,19 @@ public class PTTModel {
 		return isLogin;
 	}
 
+
 	public void creatRequest(String reqTitle,String reqDetail) {
 		requests.add(new ClassRequest(reqTitle,reqDetail));
 	}
 
 	public ListOfClassReq getRequests() {
 		return requests;
+	}
+	
+	// Class Director: registration for a teacher
+	public void registerTeacher(int day, int month, int year, String NIN, String name) {
+		Date dob = new Date(day,month,year);
+		classDir.addTeacher(classDir.createTeacher(name, dob, NIN), teachers);
 	}
 
 	// PTT director: check all the submitted class requests and make approval

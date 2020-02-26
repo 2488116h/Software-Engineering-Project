@@ -13,6 +13,7 @@ public class PTTController {
 		this.view = view;
 		this.data = data;
 		data.readFile();
+	}
 
 	public void login() {
 		input = new Scanner(System.in);
@@ -73,15 +74,17 @@ public class PTTController {
 					index = input.nextInt();
 				}
 				mainMenu(role);
-
 			}
-
 		}else if (menuNo == 4) {// 4. choose logout
 			view.logout();
 			this.login();
 		}
 	}
 
+	/*Class Director responsibilities-1:
+	 	* 1. create a class request
+	 	* 2. 
+	 	*/
 	public boolean createReq() {
 		boolean flag = true;
 		input = new Scanner(System.in);
@@ -89,7 +92,6 @@ public class PTTController {
 		String title = input.next();
 		view.createReqDetails();
 		String detail = input.next();
-
 		model.creatRequest(title, detail);
 		view.submitteReq();
 		data.classReqData();
@@ -103,19 +105,27 @@ public class PTTController {
 		return flag;
 	}
 
-	/*
-	 * -----------------------------------------------------
-	 * Class Director
-	 */
-	// process of registering a teacher: check, create, add
-	public void registerTR(String teacherName) {
-	if(model.getTRs().check(teacherName)) {
-		System.out.println(teacherName + "is already in the List.");
-	}else {
-		System.out.println();
-		Scanner s = new Scanner(System.in);
-		classDir.createTeacher("u", "p", "n", null, "NIN");
-		System.out.println(teacherName + "is successfully added.");
+	/*Class Director responsibilities-2: 
+	 	* 1. find this teacher or
+	 	* 2. register this teacher into the suitable list
+	 	*/
+	public void registerTR() {
+		view.createSuitTeacher();
+		input = new Scanner(System.in);
+		String teacherName = input.next();
+		
+		if(model.getTRs().check(teacherName)) {
+			view.teacherExists(teacherName);
+		}else {
+			view.createTeacherGuide();
+			input = new Scanner(System.in);
+			int day = input.nextInt();
+			int month = input.nextInt();
+			int year = input.nextInt();
+			String NIN = input.next();
+			model.registerTeacher(day, month, year, NIN, teacherName);
+			view.addedTeacher();
+		}
 	}
-
+	
 }

@@ -50,5 +50,5 @@ public class ClassRequest {
 		String output2 = "Request Detail: " + reqDetail + " ; ";
 		String output3 = "Request Status: " + reqStatus + ".";
 		return output1+output2+output3;
-
+	}
 }

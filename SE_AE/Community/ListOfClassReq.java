@@ -49,6 +49,13 @@ public class ListOfClassReq {
 			output = output + ListOfCR.get(i).toString() + "\n";
 		}
 		return output;
-	
 
+}
+
+	public void merge(ListOfClassReq newRequests) {
+		for(int i=0;i<newRequests.getSize();i++) {
+			ListOfCR.add(newRequests.getClassReq(i));
+		}
+	}
+	
 }

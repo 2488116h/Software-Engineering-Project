@@ -35,5 +35,14 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
+	
+	// setter: account name
+	public void setUsername(String u) {
+		username = u;
+	}
+	// setter: account password
+	public void setPassword(String p) {
+		password = p;
+	}
 
 }

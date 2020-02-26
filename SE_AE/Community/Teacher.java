@@ -18,7 +18,6 @@ public class Teacher extends User {
 
 	public void print(PrintStream ps) {
 		super.print(ps);
-
 	}
-
+	
 }

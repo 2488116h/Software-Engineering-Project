@@ -94,26 +94,30 @@ public class PTTView {
 		}
 
 	}
-
+	
+	/* Class Director Menu: 
+	 	*  1. prompt for adding a teacher
+	 	*  2. already exists
+	 	*  3. create a new teacher
+	 	*/
+	// CD-1
 	public void createSuitTeacher() {
-		System.out.println("Please add a teacher to suitable teachers list:");
+		System.out.println("Please add a teacher to the suitable teachers list:");
 	}
-
+	// CD-2
+	public void teacherExists(String teacherName) {
+		System.out.println(teacherName + "is already in the List.");
+	}
+	// CD-3-1 ENTER Required Information of creating a new teacher
+	public void createTeacherGuide() {
+		System.out.println("Please enter the Personal Information of this new Teacher.");
+		System.out.println("Enter his/her date of birth (day,month,year) and National Insurance Number.");
+	}
+	// CD-3-2 added successful
 	public void addedTeacher() {
 		System.out.println("-------Teacher added------\n add another teacher by input the index or enter '0' to return Main Menu");
 	}
-
-	//System prompt for creating a new Teacher
-	public void createTeacherGuide(String teacherName) {
-		System.out.println(teacherName + "is already in the List.");
-
-		System.out.println("Please enter the Personal Information of this new Teacher.");
-		System.out.println("First, enter his/her date of birth:");
-
-		System.out.println("Then, enter his/her National Insurance Number:");
-
-		System.out.println("Finally, enter the default Username and defalut Password for his/her User account:");
-	}
+	// ----------------------------------------------------------------------------------
 
 	// collect user input for a new teacher
 	public void CDInput(Scanner sc) {

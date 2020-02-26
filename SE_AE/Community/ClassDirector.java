@@ -3,18 +3,15 @@
 package Community;
 
 import java.io.PrintStream;
-
-//import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import User.Date;
 import User.User;
-// ----------------------------------------
-// New
-import java.util.List;
-import java.util.Scanner;
 
 public class ClassDirector extends User{
 	
+	private ListOfClassReq newRequests;
 	// constructor
 	public ClassDirector(String u, String p, String n, Date d, String NIN) {
 		super(u, p, n, d, NIN);
@@ -40,26 +37,31 @@ public class ClassDirector extends User{
 		return ListOfTRs.check(teacherName);
 	}
 	
-	// create a new teacher
-	public Teacher createTeacher(String u, String p, String n, Date d, String NIN) {
-		Teacher tr = new Teacher(u, p, n, d, NIN);
+	// create a new teacher: with default username and password, and attribute
+	public Teacher createTeacher(String n, Date d, String NIN) {
+		String defaultUserName = n;
+		String defaultPassword = Integer.toString(d.getDay()) + Integer.toString(d.getMonth()) + Integer.toString(d.getYear());
+		ListOfAttribute attributes = new ListOfAttribute();
+		Teacher tr = new Teacher(defaultUserName, defaultPassword, n, d, NIN, attributes);
 		return tr;
 	}
 	
 	// add a teacher in the list
 	public void addTeacher(Teacher tr, ListOfTeacher ListOfTRs) {
-		ListOfTRs.add(tr);
+		ListOfTRs.addTeacher(tr);
 	}
 	
 	// create a new class request and add it to the list of Request
-	public void createCR(String reqTitle, String reqDetail, ListOfClassReq ListOfCRs) {
+	public void createCR(String reqTitle, String reqDetail) {
 		ClassRequest classReq = new ClassRequest(reqTitle, reqDetail);
-		ListOfCRs.add(classReq);
+		newRequests.add(classReq);
 	}
 	
-	// print list of class requirement
+	// print a list of all class requirement (new and old)
 	public void printListOfCR(PrintStream ps, ListOfClassReq ListOfCRs) {
 			ps.print(ListOfCRs.toString());
+			ps.print("New added:" + "\n");
+			ps.print(newRequests.toString());
 	}
 	
 }

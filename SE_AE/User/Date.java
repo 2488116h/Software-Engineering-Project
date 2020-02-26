@@ -9,4 +9,15 @@ public class Date {
 	        dob_m = m;
 	        dob_y = y;
 	}
+	
+	// getters
+	public int getDay() {
+		return dob_d;
+	}
+	public int getMonth() {
+		return dob_m;
+	}
+	public int getYear() {
+		return dob_y;
+	}
 }
