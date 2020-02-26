@@ -9,16 +9,16 @@ public class ClassRequest {
 	private String reqDetail;
 	public static String[] status= {"Submitted","Approved","Disapproved"};
 	private String reqStatus;
-	
+
 	public ClassRequest(String reqTitle,String reqDetail) {
-		
+
 		this.reqTitle=reqTitle;
 		this.reqDetail=reqDetail;
 
 		HashMap<String,String> req=new HashMap<>();
 		req.put("Title", reqTitle);
 		req.put("Description", reqDetail);
-		reqStatus=status[1];
+		reqStatus=status[0];
 		req.put("Status", reqStatus);
 	}
 
@@ -27,12 +27,21 @@ public class ClassRequest {
 		return reqStatus;
 	}
 
+
 	public void setReqStatus(String reqStatus) {
 		this.reqStatus = reqStatus;
 	}
-	
+
 	public void print(PrintStream ps) {
-		ps.println(reqTitle+"\n-----\n"+reqDetail+"\n-----\n"+reqStatus);
+		ps.println("Title: "+reqTitle+"\nDesicription:\n"+reqDetail+"\nStatus: "+reqStatus);
+	}
+
+	public String getReqTitle() {
+		return reqTitle;
+	}
+
+	public String getReqDetail() {
+		return reqDetail;
 	}
 	
 	// @override toString()
@@ -41,6 +50,5 @@ public class ClassRequest {
 		String output2 = "Request Detail: " + reqDetail + " ; ";
 		String output3 = "Request Status: " + reqStatus + ".";
 		return output1+output2+output3;
-	}
 
 }

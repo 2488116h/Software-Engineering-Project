@@ -14,12 +14,13 @@ public class PTTDirector extends User{
 	}
 	
 	public void approve(ClassRequest request) {
-		request.setReqStatus(request.status[1]);
+		request.setReqStatus(ClassRequest.status[1]);
 	}
 	
 	public void diapprove(ClassRequest request) {
-		request.setReqStatus(request.status[2]);
+		request.setReqStatus(ClassRequest.status[2]);
 	}
+	
 	
 	public void print(PrintStream ps) {
 		super.print(ps);

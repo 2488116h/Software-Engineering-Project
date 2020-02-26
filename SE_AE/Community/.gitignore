@@ -2,5 +2,8 @@
 /PTTDirector.class
 /ClassRequest.class
 /ListOfClassReq.class
+/Administrator.class
+/ListOfSuitTeach.class
 /Teacher.class
+/ListOfAttribute.class
 /ListOfTeacher.class

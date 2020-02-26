@@ -1,15 +1,24 @@
 package Community;
 
-import User.User;
-import User.Date;
+import java.io.PrintStream;
+import User.*;
 
-// where to store the list of teachers
+public class Teacher extends User {
 
-public class Teacher extends User{
+	private ListOfAttribute attributes;
 
-	// constructor 1
-	public Teacher(String u, String p, String n, Date d, String NIN) {
+	public Teacher(String u, String p, String n, Date d, String NIN, ListOfAttribute attributes) {
 		super(u, p, n, d, NIN);
+		this.attributes = attributes;
+	}
+
+	public ListOfAttribute getAttributes() {
+		return attributes;
+	}
+
+	public void print(PrintStream ps) {
+		super.print(ps);
+
 	}
 
 }

@@ -1,28 +1,29 @@
 package Community;
 
+
 import java.util.ArrayList;
 
 public class ListOfClassReq {
-	
+
 	private ArrayList<ClassRequest> ListOfCR;
-	
+
 	public ListOfClassReq() {
 		ListOfCR=new ArrayList<>();
-		
+
 	}
-	
+
 	public void add(ClassRequest req) {
 		ListOfCR.add(req);
 	}
-	
+
 	public ClassRequest getClassReq(int index) {
 		return ListOfCR.get(index);
 	}
-	
+
 	public int getSize() {
 		return ListOfCR.size();
 	}
-	
+
 	public ArrayList<ClassRequest> submittedList() {
 		ArrayList<ClassRequest> submittedList=new ArrayList<ClassRequest>();
 		for(ClassRequest req:ListOfCR) {
@@ -31,7 +32,16 @@ public class ListOfClassReq {
 		}
 		return submittedList;
 	}
-	
+
+	public ArrayList<ClassRequest> getListOfCR(){
+		return ListOfCR;
+	}
+
+	public void print(ArrayList<ClassRequest> list) {
+		for(ClassRequest req:list) {
+			req.print(System.out);
+		}
+
 	// print out the list with all class requests
 	public String toString() {
 		String output = "";
@@ -39,8 +49,6 @@ public class ListOfClassReq {
 			output = output + ListOfCR.get(i).toString() + "\n";
 		}
 		return output;
-	}
+	
 
-	
-	
 }

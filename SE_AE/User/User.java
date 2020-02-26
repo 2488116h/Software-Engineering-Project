@@ -21,7 +21,7 @@ public class User {
 	}
 	
 	public void print(PrintStream ps) {
-		ps.print(String.format("Hi, "+name));
+		ps.println(String.format("Hi, "+name));
 	}
 	
 	public String getPassword() {
