@@ -32,11 +32,11 @@ public class PTTModel {
 
 
 	public PTTModel() {
-		classDir=new ClassDirector("user01","1","Jam",new Date(01,01,1999),"S123456");
-		PTTDir=new PTTDirector("user02","1","Tommy",new Date(01,04,1989),"S123488");
-		admin=new Administrator("user03","1","Ted",new Date(01,01,1990),"S132987");
-		teacher1=new Teacher(null,null,"Mony",new Date(01,01,1990),"S132986",null);
-		teacher2=new Teacher(null,null,"Nemo",new Date(01,01,1990),"S132986",null);
+		classDir=new ClassDirector("user01","1");
+		PTTDir=new PTTDirector("user02","1");
+		admin=new Administrator("user03","1");
+		teacher1=new Teacher("Mony",new Date(01,01,1990),"female","S132986",null);
+		teacher2=new Teacher("Nemo",new Date(01,01,1990),"female","S132986",null);
 		users.addUser(classDir);
 		users.addUser(PTTDir);
 		users.addUser(admin);
