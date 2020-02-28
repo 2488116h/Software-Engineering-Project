@@ -3,13 +3,13 @@ package Community;
 import java.io.PrintStream;
 
 import User.Date;
-import User.User;
+import User.Account;
 
-public class PTTDirector extends User{
+public class PTTDirector extends Account{
 	
 	
-	public PTTDirector(String u, String p, String n, Date d, String NIN) {
-		super(u, p, n, d, NIN);
+	public PTTDirector(String u, String p) {
+		super(u, p);
 		// TODO Auto-generated constructor stub
 	}
 	

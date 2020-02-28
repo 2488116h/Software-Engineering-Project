@@ -1,5 +1,4 @@
-// package name: Account_Type
-// User: Person
+// package name:
 package Community;
 
 import java.io.PrintStream;
@@ -7,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import User.Date;
-import User.User;
+import User.Account;
 
-public class ClassDirector extends User{
+public class ClassDirector extends Account{
 	
 	private ListOfClassReq newRequests;
 	// constructor
-	public ClassDirector(String u, String p, String n, Date d, String NIN) {
-		super(u, p, n, d, NIN);
+	public ClassDirector(String u, String p) {
+		super(u, p);
 	}
 
 //	public void creatClassReq() {
@@ -38,11 +37,9 @@ public class ClassDirector extends User{
 	}
 	
 	// create a new teacher: with default username and password, and attribute
-	public Teacher createTeacher(String n, Date d, String NIN) {
-		String defaultUserName = n;
-		String defaultPassword = Integer.toString(d.getDay()) + Integer.toString(d.getMonth()) + Integer.toString(d.getYear());
-		ListOfAttribute attributes = new ListOfAttribute();
-		Teacher tr = new Teacher(defaultUserName, defaultPassword, n, d, NIN, attributes);
+	public Teacher createTeacher(String n, Date d, String g, String NIN) {
+		String defaultStatus = "";
+		Teacher tr = new Teacher(n, d, g, NIN, defaultStatus);
 		return tr;
 	}
 	

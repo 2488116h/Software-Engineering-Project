@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 
 public class ListOfUser {
-	private ArrayList<User> users;
-	private User u;
+	private ArrayList<Account> users;
+	private Account u;
 	public ListOfUser() {
-		users = new ArrayList<User>();
+		users = new ArrayList<Account>();
 	}
 	
-	public void addUser(User user) {
+	public void addUser(Account user) {
 		users.add(user);
 	}
 	
-	public void removeUser(User user) {
+	public void removeUser(Account user) {
 		users.remove(user);
 	}
 	
@@ -22,14 +22,14 @@ public class ListOfUser {
 		return users.size();
 	}
 	
-	public User getUser(int index) {
+	public Account getUser(int index) {
 		return users.get(index);
 		
 	}
 
 	
 	public void print(PrintStream ps) {
-		for(User u:users) {
+		for(Account u:users) {
 			u.print(ps);
 		}
 	}

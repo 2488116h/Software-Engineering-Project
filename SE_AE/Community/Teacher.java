@@ -1,23 +1,17 @@
 package Community;
 
-import java.io.PrintStream;
 import User.*;
 
-public class Teacher extends User {
+public class Teacher extends Person {
 
-	private ListOfAttribute attributes;
+	private String status;
 
-	public Teacher(String u, String p, String n, Date d, String NIN, ListOfAttribute attributes) {
-		super(u, p, n, d, NIN);
-		this.attributes = attributes;
+	public Teacher( String n, Date d,String g, String NIN, String status) {
+		super(n, d, g, NIN);
+		this.status=status;
 	}
-
-	public ListOfAttribute getAttributes() {
-		return attributes;
-	}
-
-	public void print(PrintStream ps) {
-		super.print(ps);
-	}
+	
+	
+	
 	
 }

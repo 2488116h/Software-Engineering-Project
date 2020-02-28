@@ -6,13 +6,12 @@ public class PTTController {
 	private PTTModel model;
 	private PTTView view;
 	private Scanner input;
-	private DataFile data;
 
-	public PTTController(PTTModel model, PTTView view, DataFile data) {
+
+	public PTTController(PTTModel model, PTTView view) {
 		this.model = model;
 		this.view = view;
-		this.data = data;
-		data.readFile();
+	
 	}
 
 	public void login() {
@@ -59,7 +58,7 @@ public class PTTController {
 				}
 				view.approval_menu();
 				model.approval(input.nextInt());
-				data.classReqData();
+				
 				mainMenu(role);
 
 			} else if (role == 3) {// 3. choose to create a list of suitable teacher.
@@ -94,7 +93,7 @@ public class PTTController {
 		String detail = input.next();
 		model.creatRequest(title, detail);
 		view.submitteReq();
-		data.classReqData();
+		
 
 		if (input.nextInt() == 1) {
 			this.createReq();
@@ -112,18 +111,19 @@ public class PTTController {
 	public void registerTR() {
 		view.createSuitTeacher();
 		input = new Scanner(System.in);
-		String teacherName = input.next();
+		String teacherNIN = input.next();
 		
-		if(model.getTRs().check(teacherName)) {
-			view.teacherExists(teacherName);
+		if(model.getTRs().check(teacherNIN)) {
+			view.teacherExists(teacherNIN);
 		}else {
 			view.createTeacherGuide();
 			input = new Scanner(System.in);
+			String teacherName = input.next();
 			int day = input.nextInt();
 			int month = input.nextInt();
 			int year = input.nextInt();
-			String NIN = input.next();
-			model.registerTeacher(day, month, year, NIN, teacherName);
+			String gender = input.nextLine();
+			model.registerTeacher(teacherName, day, month, year, gender, teacherNIN);
 			view.addedTeacher();
 		}
 	}
