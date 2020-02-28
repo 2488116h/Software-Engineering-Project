@@ -1,5 +1,4 @@
-// package name: Account_Type
-// User: Person
+// package name:
 package Community;
 
 import java.io.PrintStream;
@@ -38,11 +37,11 @@ public class ClassDirector extends User{
 	}
 	
 	// create a new teacher: with default username and password, and attribute
-	public Teacher createTeacher(String n, Date d, String NIN) {
+	public Teacher createTeacher(String n, Date d, String g, String NIN) {
 		String defaultUserName = n;
 		String defaultPassword = Integer.toString(d.getDay()) + Integer.toString(d.getMonth()) + Integer.toString(d.getYear());
-		ListOfAttribute attributes = new ListOfAttribute();
-		Teacher tr = new Teacher(defaultUserName, defaultPassword, n, d, NIN, attributes);
+		String defaultStatus = "";
+		Teacher tr = new Teacher(defaultUserName, defaultPassword, n, d, NIN, g);
 		return tr;
 	}
 	

@@ -1,10 +1,6 @@
 package Main;
 
 /*
- * data that needs to be modified and updated:
- * 1. list of teacher, new teacher
- * 2. list of class requests, new CR
- *
  * data could be imported from a database:
  * 1. list of users
  * 2. list of teachers
@@ -12,16 +8,17 @@ package Main;
  */
 
 
-import Community.ClassDirector;
-import Community.ClassRequest;
-import Community.ListOfClassReq;
-import Community.ListOfTeacher;
-import Community.PTTDirector;
-import Community.Teacher;
-import User.Date;
-import User.ListOfUser;
-
-import Community.Administrator;
+//import Community.ClassDirector;
+//import Community.ClassRequest;
+//import Community.ListOfClassReq;
+//import Community.ListOfTeacher;
+//import Community.PTTDirector;
+//import Community.Teacher;
+//import Community.Administrator;
+//import User.Date;
+//import User.ListOfUser;
+import Community.*;
+import User.*;
 
 public class PTTModel {
 	private ClassDirector classDir;
@@ -75,9 +72,9 @@ public class PTTModel {
 	}
 	
 	// Class Director: registration for a teacher
-	public void registerTeacher(int day, int month, int year, String NIN, String name) {
+	public void registerTeacher(String name, int day, int month, int year, String gender, String NIN) {
 		Date dob = new Date(day,month,year);
-		classDir.addTeacher(classDir.createTeacher(name, dob, NIN), teachers);
+		teachers.addTeacher(classDir.createTeacher(name, dob, gender,NIN));
 	}
 
 	// PTT director: check all the submitted class requests and make approval

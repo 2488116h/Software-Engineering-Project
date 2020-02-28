@@ -40,9 +40,9 @@ public class ListOfTeacher {
 	}
 
 	// check whether a teacher in the list or not
-	public boolean check(String name) {
+	public boolean check(String NIN) {
 		for(int i=0;i<teachers.size();i++) {
-			if(teachers.get(i).getName() == name) {
+			if(teachers.get(i).getNIN() == NIN) {
 				return true;
 			}
 		}
