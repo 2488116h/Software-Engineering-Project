@@ -1,19 +1,21 @@
+// package name:
 package Community;
 
 import java.io.PrintStream;
-
-//import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import User.Date;
-import User.User;
+import User.Account;
 
-public class ClassDirector extends User{
-	public ClassDirector(String u, String p, String n, Date d, String NIN) {
-		super(u, p, n, d, NIN);
-		// TODO Auto-generated constructor stub
-
-	}
+public class ClassDirector extends Account{
 	
+	private ListOfClassReq newRequests;
+	// constructor
+	public ClassDirector(String u, String p) {
+		super(u, p);
+	}
+
 //	public void creatClassReq() {
 //		System.out.println("Please enter the Title: ");
 //		Scanner s = new Scanner(System.in);
@@ -21,20 +23,42 @@ public class ClassDirector extends User{
 //		System.out.println("Please enter the Description: ");
 //		String details = s.nextLine();		
 //		new ClassRequest(title,details);
-//		
 //	}
 	
-	public ClassRequest createClassReq(String reqTitle,String reqDetail) {
-		return new ClassRequest(reqTitle,reqDetail,ClassRequest.status[0]);
-	}
-	
-	public Teacher createTeacher( String name, Date date, String nIN) {
-		return new Teacher(null,null,name,date,nIN,null);
-	}
-	
+	// super ??
 	public void print(PrintStream ps) {
 		super.print(ps);
 		ps.print(" Class Director");
 	}
 
+	// find this teacher 
+	public boolean find(String teacherName, ListOfTeacher ListOfTRs) {
+		return ListOfTRs.check(teacherName);
+	}
+	
+	// create a new teacher: with default username and password, and attribute
+	public Teacher createTeacher(String n, Date d, String g, String NIN) {
+		String defaultStatus = "";
+		Teacher tr = new Teacher(n, d, g, NIN, defaultStatus);
+		return tr;
+	}
+	
+	// add a teacher in the list
+	public void addTeacher(Teacher tr, ListOfTeacher ListOfTRs) {
+		ListOfTRs.addTeacher(tr);
+	}
+	
+	// create a new class request and add it to the list of Request
+	public void createCR(String reqTitle, String reqDetail) {
+		ClassRequest classReq = new ClassRequest(reqTitle, reqDetail);
+		newRequests.add(classReq);
+	}
+	
+	// print a list of all class requirement (new and old)
+	public void printListOfCR(PrintStream ps, ListOfClassReq ListOfCRs) {
+			ps.print(ListOfCRs.toString());
+			ps.print("New added:" + "\n");
+			ps.print(newRequests.toString());
+	}
+	
 }

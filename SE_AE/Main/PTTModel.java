@@ -1,21 +1,28 @@
 package Main;
 
+/*
+ * data could be imported from a database:
+ * 1. list of users
+ * 2. list of teachers
+ * 3. list of class requests
+ */
 
 
-import Community.ClassDirector;
-import Community.ClassRequest;
-import Community.ListOfClassReq;
-import Community.ListOfTeacher;
-import Community.PTTDirector;
-import Community.Teacher;
-import User.Date;
-import User.ListOfUser;
-
-import Community.Administrator;
+//import Community.ClassDirector;
+//import Community.ClassRequest;
+//import Community.ListOfClassReq;
+//import Community.ListOfTeacher;
+//import Community.PTTDirector;
+//import Community.Teacher;
+//import Community.Administrator;
+//import User.Date;
+//import User.ListOfUser;
+import Community.*;
+import User.*;
 
 public class PTTModel {
 	private ClassDirector classDir;
-	private PTTDirector PTTDir;	
+	private PTTDirector PTTDir;
 	private ListOfUser users =new ListOfUser();
 	private ListOfClassReq classRequests=new ListOfClassReq();	
 	private Administrator admin;
@@ -25,22 +32,19 @@ public class PTTModel {
 	private Teacher teacher1,teacher2;
 //	private suitTeacherForm form;
 
-	
+
 	public PTTModel() {
-		classDir=new ClassDirector("user01","1","Jam",new Date(01,01,1999),"S123456");
-		PTTDir=new PTTDirector("user02","1","Tommy",new Date(01,04,1989),"S123488");
-		admin=new Administrator("user03","1","Ted",new Date(01,01,1990),"S132987");
-		teacher1=new Teacher(null,null,"Mony",new Date(01,01,1990),"S132986",null);
-		teacher2=new Teacher(null,null,"Nemo",new Date(01,01,1990),"S132986",null);
-		
-//		classDir.createTeacher("Mony",new Date(01,01,1990),"S132986");
-//		classDir.createTeacher("Nemo",new Date(01,01,1990),"S132986");
+		classDir=new ClassDirector("user01","1");
+		PTTDir=new PTTDirector("user02","1");
+		admin=new Administrator("user03","1");
+		teacher1=new Teacher("Mony",new Date(01,01,1990),"female","S132986",null);
+		teacher2=new Teacher("Nemo",new Date(01,01,1990),"female","S132986",null);
 		users.addUser(classDir);
 		users.addUser(PTTDir);
 		users.addUser(admin);
 		teachers.addTeacher(teacher1);
 		teachers.addTeacher(teacher2);
-		
+
 	}
 	// according to the username and password , method return the results of login ( return the user's role or failed to login) 
 	public int login(String username,String password) {
@@ -56,7 +60,7 @@ public class PTTModel {
 					isLogin=3;
 				}
 			}
-		}	
+		}
 		return isLogin;
 	}
 	
@@ -67,9 +71,9 @@ public class PTTModel {
 	
 	
 	
-	public void createTeacher(String name, Date date, String nIN) {
-		teachers.addTeacher(classDir.createTeacher(name, date, nIN));
-	}
+	// public void createTeacher(String name, Date date, String nIN) {
+	// 	teachers.addTeacher(classDir.createTeacher(name, date, nIN));
+	// }
 	
 	// PTT director: check the list of suitable teacher who needs to take training and make approval 
 	public void trainingApproval(int choice) {		
@@ -81,7 +85,13 @@ public class PTTModel {
 		}				
 	}
 	
-	// PTT director: check all the submitted class requests and make approval 
+	// Class Director: registration for a teacher
+	public void registerTeacher(String name, int day, int month, int year, String gender, String NIN) {
+		Date dob = new Date(day,month,year);
+		teachers.addTeacher(classDir.createTeacher(name, dob, gender,NIN));
+	}
+
+	// PTT director: check all the submitted class requests and make approval
 	public void approval(int choice) {
 		if(choice==1) {
 			for(ClassRequest classReq:classRequests.submittedList()) 
@@ -141,5 +151,13 @@ public class PTTModel {
 	
 
 
+
+	// getters
+	public ListOfTeacher getTRs() {
+		return teachers;
+	}
+	public ListOfClassReq getCRs() {
+		return requests;
+	}
 
 }

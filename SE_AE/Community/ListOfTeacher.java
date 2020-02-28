@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ListOfTeacher {
-	
+
 	private ArrayList<Teacher> teachers;
-	
+
 	public ListOfTeacher() {
 		teachers = new ArrayList<>();
 	}
-	
+
 	public void addTeacher(Teacher teacher) {
 		teachers.add(teacher);
 	}
@@ -27,7 +27,7 @@ public class ListOfTeacher {
 //	public ArrayList<Teacher> getSuitTeachers() {
 //		return teachers;
 //	}
-	
+
 	public ArrayList<Teacher> getTeachers() {
 		return teachers;
 	}
@@ -35,7 +35,7 @@ public class ListOfTeacher {
 	public Teacher getTeacher(int index) {
 		return teachers.get(index);
 	}
-	
+
 	public int getTeachersSize() {
 		return teachers.size();
 	}
@@ -47,6 +47,15 @@ public class ListOfTeacher {
 			System.out.print(s + " ");
 		}
 	}
-	
+
+	// check whether a teacher in the list or not
+	public boolean check(String NIN) {
+		for(int i=0;i<teachers.size();i++) {
+			if(teachers.get(i).getNIN() == NIN) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

@@ -4,9 +4,9 @@ import java.io.PrintStream;
 
 import User.*;
 
-public class Administrator extends User {
-	public Administrator(String u, String p, String n, Date d, String NIN) {
-		super(u, p, n, d, NIN);
+public class Administrator extends Account {
+	public Administrator(String u, String p) {
+		super(u, p);
 	}
 	
 	public void createSuitTeacher(ListOfTeacher lot,Teacher teacher) {
