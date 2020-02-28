@@ -46,7 +46,7 @@ public class PTTController {
 			view.listOfTeacher();
 			view.listOfSuitTeacher();
 		//	data.teacherData();
-			data.writeFile();
+		//	data.writeFile();
 			mainMenu(role);
 		} else if (menuNo == 3) {
 			if(role == 1) { // 3. choose create class request.
@@ -89,7 +89,7 @@ public class PTTController {
 					view.addedTeacher();
 					index = input.nextInt();
 			//		data.trainingReqData();
-					data.writeFile();
+			//		data.writeFile();
 				}
 				mainMenu(role);
 
@@ -113,7 +113,7 @@ public class PTTController {
 		model.creatRequest(title, detail);
 		view.submitteReq();
 //		data.classReqData();
-		data.writeFile();
+//		data.writeFile();
 
 		if (input.nextInt() == 1) {// chose 1 means that create a new class request
 			this.createReq();

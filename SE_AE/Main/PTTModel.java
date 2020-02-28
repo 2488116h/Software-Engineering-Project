@@ -30,16 +30,16 @@ public class PTTModel {
 		classDir=new ClassDirector("user01","1","Jam",new Date(01,01,1999),"S123456");
 		PTTDir=new PTTDirector("user02","1","Tommy",new Date(01,04,1989),"S123488");
 		admin=new Administrator("user03","1","Ted",new Date(01,01,1990),"S132987");
-//		teacher1=new Teacher(null,null,"Mony",new Date(01,01,1990),"S132986",null);
-//		teacher2=new Teacher(null,null,"Nemo",new Date(01,01,1990),"S132986",null);
+		teacher1=new Teacher(null,null,"Mony",new Date(01,01,1990),"S132986",null);
+		teacher2=new Teacher(null,null,"Nemo",new Date(01,01,1990),"S132986",null);
 		
 //		classDir.createTeacher("Mony",new Date(01,01,1990),"S132986");
 //		classDir.createTeacher("Nemo",new Date(01,01,1990),"S132986");
 		users.addUser(classDir);
 		users.addUser(PTTDir);
 		users.addUser(admin);
-//		teachers.addTeacher(teacher1);
-//		teachers.addTeacher(teacher2);
+		teachers.addTeacher(teacher1);
+		teachers.addTeacher(teacher2);
 		
 	}
 	// according to the username and password , method return the results of login ( return the user's role or failed to login) 

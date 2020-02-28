@@ -11,7 +11,7 @@ public class Administrator extends User {
 	
 	public void createSuitTeacher(ListOfTeacher lot,Teacher teacher) {
 		
-		lot.addTeacher(teacher.clone());
+		lot.addTeacher(teacher);
 		
 	}
 	

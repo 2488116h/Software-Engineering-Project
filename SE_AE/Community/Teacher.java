@@ -23,9 +23,9 @@ public class Teacher extends User {
 		this.attributes.addAttribute(training);
 	}
 	
-	public Teacher clone() {
-		return this.clone();
-	}
+//	public Teacher clone() {
+//		return this.clone();
+//	}
 	
 
 	public void print(PrintStream ps) {
