@@ -117,7 +117,7 @@ public class PTTView {
 		
 	}
 
-	public void createSuitTeacher() {
+	public void addSuitTeacher() {
 		System.out.println("Please enter the index to add a teacher to list or enter '0' to return Main Menu");
 	}
 	
@@ -128,25 +128,34 @@ public class PTTView {
 	 	*/
 	// CD-1
 	public void createTeacher() {
-		System.out.println("Please add a teacher to the suitable teachers list:");
+		System.out.println("Please add a teacher to the suitable teachers list:");}
+	public void createSuitTeacher() {
+		System.out.println("Please enter his/her National Insurance Number:");
 	}
 	// CD-2
 	public void teacherExists(String teacherName) {
 		System.out.println(teacherName + "is already in the List.");
 	}
 	// CD-3-1 ENTER Required Information of creating a new teacher
-	public void createTeacherGuide() {
+	public void createTeacherGuide1() {
 		System.out.println("Please enter the Personal Information of this new Teacher.");
-		System.out.println("Enter his/her date of birth (day,month,year) and National Insurance Number.");
+	}
+	public void createTeacherGuide2() {
+		System.out.println("First, enter his/her name:");
+	}
+	public void createTeacherGuide3() {
+		System.out.println("Then, enter his/her date of birth (day, month, year):");
+	}
+	public void createTeacherGuide4() {
+		System.out.println("Finally, enter his/her gender:");
 	}
 	// CD-3-2 added successful
 	public void addedTeacher() {
 		System.out.println("-------Teacher added------\n add another teacher by enter the index or enter '0' to return Main Menu");
 	}
-	// ----------------------------------------------------------------------------------
 
-	// collect user input for a new teacher
-	public void CDInput(Scanner sc) {
-
-	}
+//	// collect user input for a new teacher
+//	public void CDInput(Scanner sc) {
+//
+//	}
 }
