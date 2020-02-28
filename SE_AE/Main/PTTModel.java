@@ -6,17 +6,6 @@ package Main;
  * 2. list of teachers
  * 3. list of class requests
  */
-
-
-//import Community.ClassDirector;
-//import Community.ClassRequest;
-//import Community.ListOfClassReq;
-//import Community.ListOfTeacher;
-//import Community.PTTDirector;
-//import Community.Teacher;
-//import Community.Administrator;
-//import User.Date;
-//import User.ListOfUser;
 import Community.*;
 import User.*;
 
@@ -35,14 +24,13 @@ public class PTTModel {
 		classDir=new ClassDirector("user01","1");
 		PTTDir=new PTTDirector("user02","1");
 		admin=new Administrator("user03","1");
-		teacher1=new Teacher("Mony",new Date(01,01,1990),"female","S132986",null);
-		teacher2=new Teacher("Nemo",new Date(01,01,1990),"female","S132986",null);
+		teacher1=new Teacher("Mony",new Date(01,01,1990),"female","S132986");
+		teacher2=new Teacher("Nemo",new Date(01,01,1990),"female","S132986");
 		users.addUser(classDir);
 		users.addUser(PTTDir);
 		users.addUser(admin);
 		teachers.addTeacher(teacher1);
 		teachers.addTeacher(teacher2);
-
 	}
 
 	public int login(String username,String password) {
@@ -102,8 +90,6 @@ public class PTTModel {
 	public ListOfTeacher getSuitTeachers() {
 		return suitTeachers;
 	}
-
-
 
 	// getters
 	public ListOfTeacher getTRs() {
