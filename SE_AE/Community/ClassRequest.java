@@ -10,7 +10,7 @@ public class ClassRequest {
 	public static String[] status= {"Submitted","Approved","Disapproved"};
 	private String reqStatus;
 	
-	public ClassRequest(String reqTitle,String reqDetail) {
+	public ClassRequest(String reqTitle,String reqDetail,String reqStatus) {
 		
 		this.reqTitle=reqTitle;
 		this.reqDetail=reqDetail;
@@ -18,7 +18,7 @@ public class ClassRequest {
 		HashMap<String,String> req=new HashMap<>();
 		req.put("Title", reqTitle);
 		req.put("Description", reqDetail);
-		reqStatus=status[0];
+		this.reqStatus=reqStatus;
 		req.put("Status", reqStatus);
 	}
 

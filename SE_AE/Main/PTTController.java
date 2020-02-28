@@ -30,8 +30,7 @@ public class PTTController {
 
 		} else {
 			mainMenu(role);
-		}
-		;
+		};
 
 	}
 
@@ -46,6 +45,8 @@ public class PTTController {
 		} else if (menuNo == 2) {// 2. choose to show the list of teacher
 			view.listOfTeacher();
 			view.listOfSuitTeacher();
+		//	data.teacherData();
+			data.writeFile();
 			mainMenu(role);
 		} else if (menuNo == 3) {
 			if(role == 1) { // 3. choose create class request.
@@ -54,25 +55,41 @@ public class PTTController {
 				};
 
 			} else if (role == 2) {// 3. choose list all submitted requests.
-				if (model.getRequests().submittedList().size() == 0) {
-					view.noRequest();
-					mainMenu(role);
+				view.selectReq();
+				int index=input.nextInt();
+				if(index==1) {// 1. choose list all submitted class requests.
+					if (model.getClassRequests().submittedList().size() == 0) {
+						view.noRequest();
+						mainMenu(role);
+					}
+					view.submittedList_ClassReq();
+					model.approval(input.nextInt());
+			//		data.classReqData();
+			//		data.writeFile();
+				}else if(index==2) {// 2. choose list all submitted training requests.
+					view.submittedList_TrainReq();
+					int select=input.nextInt();
+					if(select==1||select==2) {// 1. approve 2.disapprove 3. return Main Menu
+						model.trainingApproval(select);
+						view.approval_result(select);
+					}
+									
 				}
-				view.approval_menu();
-				model.approval(input.nextInt());
-				data.classReqData();
-				mainMenu(role);
+					mainMenu(role);
+				
+			
 
 			} else if (role == 3) {// 3. choose to create a list of suitable teacher.
 				view.listOfTeacher();
 				view.createSuitTeacher();
-				input = new Scanner(System.in);
 				int index = input.nextInt();
 				
-				while(index!=0) {
+				while(index!=0) {// 
 					model.createSuitTeacher(model.getTeachers().getTeacher(index-1));
 					view.addedTeacher();
 					index = input.nextInt();
+			//		data.trainingReqData();
+					data.writeFile();
 				}
 				mainMenu(role);
 
@@ -84,6 +101,7 @@ public class PTTController {
 		}
 	}
 
+	// create class request method, when it returns true, it will create next class request
 	public boolean createReq() {
 		boolean flag = true;
 		input = new Scanner(System.in);
@@ -94,9 +112,10 @@ public class PTTController {
 
 		model.creatRequest(title, detail);
 		view.submitteReq();
-		data.classReqData();
+//		data.classReqData();
+		data.writeFile();
 
-		if (input.nextInt() == 1) {
+		if (input.nextInt() == 1) {// chose 1 means that create a new class request
 			this.createReq();
 		} else {
 			flag = false;

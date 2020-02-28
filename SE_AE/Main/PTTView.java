@@ -61,13 +61,32 @@ public class PTTView {
 		System.out.println("-------Request Submitted------\n1.create new request\n2.return main menu");
 	}
 	
-	public void listRequests() {
-		model.getRequests().print(model.getRequests().getListOfCR());
+	public void selectReq() {
+		System.out.println("-------Select Requirement------\n1.class request\n2.training request\n3.return main menu");
 	}
 	
+	public void listRequests() {
+		model.getClassRequests().print(model.getClassRequests().getListOfCR());
+	}
+	
+	public void submittedList_ClassReq() {
+		model.getClassRequests().print(model.getClassRequests().submittedList());
+		approval_menu();
+	}
+	
+	public void submittedList_TrainReq() {
+		listOfSuitTeacher();
+		approval_menu();
+	}
 	public void approval_menu() {
-		model.getRequests().print(model.getRequests().submittedList());
-		System.out.println("-------Select Menu------\n1.approve\n2.disapprove");
+		System.out.println("-------Select Menu------\n1.approve\n2.disapprove\n3.return Main Menu");
+	}
+	public void approval_result(int index) {
+		if(index==1) {
+			System.out.println("Approved Successfully!");
+		}else if(index==2) {
+			System.out.println("Rejected Successfully!");
+		}	
 	}
 	
 
@@ -93,14 +112,17 @@ public class PTTView {
 			System.out.println();
 		}
 		
+		if(model.getSuitTeachers().getTeachersSize()==0)
+			noRequest();
+		
 	}
 
 	public void createSuitTeacher() {
-		System.out.println("Please add a teacher to suitable teachers list:");
+		System.out.println("Please enter the index to add a teacher to list or enter '0' to return Main Menu");
 	}
 	
 	public void addedTeacher() {
-		System.out.println("-------Teacher added------\n add another teacher by input the index or enter '0' to return Main Menu");
+		System.out.println("-------Teacher added------\n add another teacher by enter the index or enter '0' to return Main Menu");
 	}
 
 

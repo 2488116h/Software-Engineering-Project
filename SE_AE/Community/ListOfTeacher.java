@@ -1,5 +1,6 @@
 package Community;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -13,6 +14,14 @@ public class ListOfTeacher {
 	
 	public void addTeacher(Teacher teacher) {
 		teachers.add(teacher);
+	}
+	
+	public void removeTeacher(Teacher teacher,int arg) {
+		if(arg==1) {
+			teachers.clear();
+		}
+		teachers.remove(teacher);
+		
 	}
 	
 //	public ArrayList<Teacher> getSuitTeachers() {
@@ -31,8 +40,8 @@ public class ListOfTeacher {
 		return teachers.size();
 	}
 	
-	public void print(ArrayList<Teacher> list) {
-		Iterator<Teacher> it = list.iterator();
+	public void print(PrintStream ps) {
+		Iterator<Teacher> it = teachers.iterator();
 		while(it.hasNext()) {
 			Teacher s = it.next();
 			System.out.print(s + " ");

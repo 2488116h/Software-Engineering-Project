@@ -1,5 +1,6 @@
 package Community;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -23,8 +24,8 @@ public class ListOfAttribute {
 		return listofattri;
 	}
 	
-	public void print(ArrayList<String> list) {
-		Iterator<String> it = list.iterator();
+	public void print(PrintStream ps) {
+		Iterator<String> it = listofattri.iterator();
 		while(it.hasNext()) {
 			String s = it.next();
 			System.out.print(s + " ");

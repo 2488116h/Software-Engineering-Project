@@ -24,6 +24,14 @@ public class ClassDirector extends User{
 //		
 //	}
 	
+	public ClassRequest createClassReq(String reqTitle,String reqDetail) {
+		return new ClassRequest(reqTitle,reqDetail,ClassRequest.status[0]);
+	}
+	
+	public Teacher createTeacher( String name, Date date, String nIN) {
+		return new Teacher(null,null,name,date,nIN,null);
+	}
+	
 	public void print(PrintStream ps) {
 		super.print(ps);
 		ps.print(" Class Director");

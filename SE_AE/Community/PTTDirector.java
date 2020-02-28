@@ -14,13 +14,32 @@ public class PTTDirector extends User{
 		
 		
 	}
-	
-	public void approve(ClassRequest request) {
-		request.setReqStatus(ClassRequest.status[1]);
+	 
+	// approve class request or training request 
+	public void approve(Object obj) {
+		if(obj instanceof ClassRequest) {// approve class request by set the status to 'Approved'		
+			((ClassRequest) obj).setReqStatus(ClassRequest.status[1]);
+		}
+		if(obj instanceof ListOfTeacher) {// approve training request by add training information
+			ListOfTeacher trainingReq=(ListOfTeacher)obj;
+			for(Teacher teacher:trainingReq.getTeachers()) {
+				teacher.addTraining("attended 2020 term training");
+			}
+			trainingReq.removeTeacher(null, 1);// clear all teachers in the training request list after approval
+		}			
+		
 	}
 	
-	public void diapprove(ClassRequest request) {
-		request.setReqStatus(ClassRequest.status[2]);
+	// disapprove class request or training request 
+	public void diapprove(Object obj) {
+		if(obj instanceof ClassRequest) {// disapprove class request by set the status to 'Disapproved'		
+			((ClassRequest) obj).setReqStatus(ClassRequest.status[2]);
+		}
+		// disapprove training request by clearing all teachers in the training request list 
+		if(obj instanceof ListOfTeacher) {
+			ListOfTeacher trainingReq=(ListOfTeacher)obj;		
+			trainingReq.removeTeacher(null, 1);
+		}
 	}
 	
 	

@@ -35,5 +35,21 @@ public class User {
 		return username;
 	}
 
+	public Date getDate() {
+		return date;
+	}
+
+	public String getNIN() {
+		return NIN;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 
 }
