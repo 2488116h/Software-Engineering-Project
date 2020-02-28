@@ -10,7 +10,6 @@ public class PTTDirector extends Account{
 	
 	public PTTDirector(String u, String p) {
 		super(u, p);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void approve(ClassRequest request) {

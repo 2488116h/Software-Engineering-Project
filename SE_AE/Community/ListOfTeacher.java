@@ -48,5 +48,14 @@ public class ListOfTeacher {
 		}
 		return false;
 	}
+	
+	public String checkName(String NIN) {
+		for(int i=0;i<teachers.size();i++) {
+			if(teachers.get(i).getNIN() == NIN) {
+				return teachers.get(i).getName();
+			}
+		}
+		return "No name matches!";
+	}
 
 }

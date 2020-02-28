@@ -7,11 +7,9 @@ public class PTTController {
 	private PTTView view;
 	private Scanner input;
 
-
 	public PTTController(PTTModel model, PTTView view) {
 		this.model = model;
 		this.view = view;
-	
 	}
 
 	public void login() {
@@ -81,8 +79,8 @@ public class PTTController {
 	}
 
 	/*Class Director responsibilities-1:
-	 	* 1. create a class request
-	 	* 2. 
+	 	* 1. create a new class request
+	 	* 2. add this CR in the list
 	 	*/
 	public boolean createReq() {
 		boolean flag = true;
@@ -94,35 +92,46 @@ public class PTTController {
 		model.creatRequest(title, detail);
 		view.submitteReq();
 		
-
 		if (input.nextInt() == 1) {
 			this.createReq();
 		} else {
 			flag = false;
 		}
-
+		
 		return flag;
 	}
 
 	/*Class Director responsibilities-2: 
-	 	* 1. find this teacher or
-	 	* 2. register this teacher into the suitable list
+	 	* 1. find a teacher or
+	 	* 2. register this new teacher into the suitable list
 	 	*/
 	public void registerTR() {
+		// prompt for entering NIN
 		view.createSuitTeacher();
+		// User input: 
 		input = new Scanner(System.in);
 		String teacherNIN = input.next();
 		
+		// try to find matched teacher
 		if(model.getTRs().check(teacherNIN)) {
-			view.teacherExists(teacherNIN);
+			view.teacherExists(model.getTRs().checkName(teacherNIN));
 		}else {
-			view.createTeacherGuide();
+			// Guidance for creating a new teacher
+			view.createTeacherGuide1();
+			view.createTeacherGuide2();
+				// Name 
 			input = new Scanner(System.in);
 			String teacherName = input.next();
+				// Date of birth
+			view.createTeacherGuide3();
+			input = new Scanner(System.in);
 			int day = input.nextInt();
 			int month = input.nextInt();
 			int year = input.nextInt();
-			String gender = input.nextLine();
+				// Gender
+			view.createTeacherGuide4();
+			input = new Scanner(System.in);
+			String gender = input.next();
 			model.registerTeacher(teacherName, day, month, year, gender, teacherNIN);
 			view.addedTeacher();
 		}
