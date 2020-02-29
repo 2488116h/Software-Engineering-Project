@@ -40,7 +40,7 @@ public class ListOfClassReq {
 	public void print(ArrayList<ClassRequest> list) {
 		for(ClassRequest req:list) 
 			req.print(System.out);
-		}}
+		}
 
 	// print out the list with all class requests
 	public String toString() {
