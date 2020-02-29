@@ -37,25 +37,23 @@ public class ListOfClassReq {
 		return ListOfCR;
 	}
 
-	public void print(ArrayList<ClassRequest> list) {
+	public String toString(ArrayList<ClassRequest> list) {
+		String output = "";
 		for(ClassRequest req:list) 
-			req.print(System.out);
-		}
+			output+=req.toString()+ "\n";
+		return output;
+	}
 
 	// print out the list with all class requests
-	public String toString() {
-		String output = "";
-		for(int i=0;i<ListOfCR.size();i++) {
-			output = output + ListOfCR.get(i).toString() + "\n";
-		}
-		return output;
+//	public String toString() {
+//		String output = "";
+//		for(int i=0;i<ListOfCR.size();i++) {
+//			output = output + ListOfCR.get(i).toString() + "\n";
+//		}
+//		return output;
 
-}
+//}
 
-	public void merge(ListOfClassReq newRequests) {
-		for(int i=0;i<newRequests.getSize();i++) {
-			ListOfCR.add(newRequests.getClassReq(i));
-		}
-	}
+
 	
 }

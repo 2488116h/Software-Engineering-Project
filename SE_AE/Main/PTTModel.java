@@ -66,24 +66,27 @@ public class PTTModel {
 	}
 	
 	// PTT director: check the list of suitable teacher who needs to take training and make approval 
-	public void trainingApproval(int choice) {		
-		if(choice==1) {
-				PTTDir.approve(suitTeachers);
-
-		}else if(choice==2) {
-				PTTDir.diapprove(suitTeachers);
-		}				
-	}
+//	public void trainingApproval(int choice) {		
+//		if(choice==1) {
+//				PTTDir.approve(suitTeachers);
+//
+//		}else if(choice==2) {
+//				PTTDir.diapprove(suitTeachers);
+//		}				
+//	}
 
 	// PTT director: check all the submitted class requests and make approval
 	public void approval(int choice) {
 		if(choice==1) {
 			for(ClassRequest classReq:classRequests.submittedList()) 
 				PTTDir.approve(classReq);
+			PTTDir.approve(suitTeachers);
+			
 
 		}else if(choice==2) {
 			for(ClassRequest classReq:classRequests.submittedList()) 
 				PTTDir.diapprove(classReq);
+			PTTDir.diapprove(suitTeachers);
 		}
 	}
 		
@@ -105,6 +108,14 @@ public class PTTModel {
 		String str="";
 		for(ClassRequest cr:classRequests.getListOfCR()) {
 			str+=cr.getReqTitle()+","+cr.getReqDetail()+","+cr.getReqStatus()+"\n";
+		}
+		return str;
+	}
+	
+	public String teacherData() {
+		String str="";
+		for(Teacher t:teachers.getTeachers()) {
+			str+=t.toString()+"\n";
 		}
 		return str;
 	}

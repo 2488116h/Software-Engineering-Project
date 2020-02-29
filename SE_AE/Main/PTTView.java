@@ -37,20 +37,22 @@ public class PTTView {
 		String[] menu= {
 				"1.check all the class requests",
 				"2.check all the teachers",
-				"3.create new class requirement",		       //  Class Director functions
+				"3.create new class requirement",              //  Class Director functions
+				"4.create new teacher",                        //  Class Director functions
+				"5.logout",
 				"3.approve/disapprove requests",               //  PTT Director functions
 				"3.find suitable teachers to attend training", //  Administrator functions				
 				"4.logout"                                
 				};
 		System.out.println("-------Select Menu------");
 		if(role==1) {//  Class Director menu
-			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[2]+"\n"+menu[5]);
+			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[2]+"\n"+menu[3]+"\n"+menu[4]);
 
 		}else if(role==2){//  PTT Director menu
-			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[3]+"\n"+menu[5]);
+			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[5]+"\n"+menu[7]);
 		}
 		else if(role==3){ //  Administrator menu                                
-			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[4]+"\n"+menu[5]);
+			System.out.println(menu[0]+"\n"+menu[1]+"\n"+menu[6]+"\n"+menu[7]);
 		}
 	}
 
@@ -66,17 +68,17 @@ public class PTTView {
 	}
 
 	public void submitteReq() {
-		System.out.println("-------Request Submitted------\n1.create new request\n2.return main menu");
+		System.out.println("Request Submitted!");
 	}
 	
-	public void selectReq() {
-		System.out.println("-------Select Requirement------\n1.class request\n2.training request\n3.return main menu");
-	}
+//	public void selectReq() {
+//		System.out.println("-------Select Requirement------\n1.class request\n2.training request\n3.return main menu");
+//	}
 	
 	
 	public void listRequests() {
 		if(model.getClassRequests().getSize()!=0) {
-			model.getClassRequests().print(model.getClassRequests().getListOfCR());
+			System.out.println(model.getClassRequests().toString(model.getClassRequests().getListOfCR()));
 		}else
 			noItems();
 	
@@ -86,14 +88,14 @@ public class PTTView {
  	*  check all the requests and make approval
  	*/
 	public void submittedList_ClassReq() {
-		model.getClassRequests().print(model.getClassRequests().submittedList());
-		approval_menu();
+		System.out.println(model.getClassRequests().toString(model.getClassRequests().submittedList()));
+		
 	}
 	
-	public void submittedList_TrainReq() {
-		listOfSuitTeacher();
-		approval_menu();
-	}
+//	public void submittedList_TrainReq() {
+//		listOfSuitTeacher();
+//		approval_menu();
+//	}
 	public void approval_menu() {
 		System.out.println("-------Select Menu------\n1.approve\n2.disapprove\n3.return Main Menu");
 	}
@@ -138,6 +140,10 @@ public class PTTView {
 	}
 	public void createGender() {
 		System.out.println("Finally, choose his/her gender:\n1.male\n2.female\n");
+	}
+	
+	public void createFinined() {
+		System.out.println("Created Successfully!");
 	}
 	
 	// CD-3-2 the total teacher list

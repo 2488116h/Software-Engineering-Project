@@ -21,7 +21,6 @@ public class PTTDirector extends Account{
 			for(Teacher teacher:trainingReq.getTeachers()) {
 				teacher.setStatus("attended 2020 term training");
 			}
-			trainingReq.removeTeacher(null, 1);// clear all teachers in the training request list after approval
 		}			
 		
 	}

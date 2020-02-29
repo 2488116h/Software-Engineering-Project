@@ -23,7 +23,9 @@ public class Teacher extends Person {
 		return status;
 	}
 
-	public void print(PrintStream out) {
+	public String toString() {
+		
+		return super.toString()+","+status;		
 
 	}
 	

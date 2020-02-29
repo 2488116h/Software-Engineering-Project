@@ -33,8 +33,10 @@ public class DataFile {
 			data= new Scanner(file);
 			String str="";
 			while(data.hasNext()) {
-				str+=data.next();
+				str+=data.nextLine();
 			}
+//			String[] request=str.split(",");
+//			model.creatRequest(request[0], request[1]);
 
 			
 						
@@ -64,6 +66,8 @@ public class DataFile {
 		try {
 			writer = new FileWriter(file);
 			writer.write(model.classReqData());
+			writer.write(model.getTeachers().toString());
+			writer.write(model.getSuitTeachers().toString());
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {

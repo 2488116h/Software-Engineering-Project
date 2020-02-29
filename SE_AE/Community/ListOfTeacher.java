@@ -35,11 +35,11 @@ public class ListOfTeacher {
 		return teachers.size();
 	}
 
-
 	public void print(PrintStream ps) {
-		for (Teacher t : teachers)
-			ps.printf("%d %s,%s,%s,%s,%s\n", teachers.indexOf(t) + 1, t.getName(), t.getGender(), t.getNIN(),
-					t.getDate().toString(), t.getStatus());
+		for (Teacher t : teachers) {
+			ps.print(teachers.indexOf(t) + 1 + " ");
+			ps.println(t.toString());
+		}
 	}
 
 	// check whether a teacher in the list or not

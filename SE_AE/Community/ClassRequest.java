@@ -7,19 +7,14 @@ public class ClassRequest {
 
 	private String reqTitle;
 	private String reqDetail;
-	public static String[] status= {"Submitted","Approved","Disapproved"};
+	protected static String[] status= {"Submitted","Approved","Disapproved"};
 	private String reqStatus;
 
 	public ClassRequest(String reqTitle,String reqDetail) {
 
 		this.reqTitle=reqTitle;
 		this.reqDetail=reqDetail;
-
-		HashMap<String,String> req=new HashMap<>();
-		req.put("Title", reqTitle);
-		req.put("Description", reqDetail);
-		this.reqStatus=reqStatus;
-		req.put("Status", reqStatus);
+		this.reqStatus=status[0];
 	}
 
 
@@ -32,9 +27,9 @@ public class ClassRequest {
 		this.reqStatus = reqStatus;
 	}
 
-	public void print(PrintStream ps) {
-		ps.println("Title: "+reqTitle+"\nDesicription:\n"+reqDetail+"\nStatus: "+reqStatus);
-	}
+//	public void print(PrintStream ps) {
+//		ps.println("Title: "+reqTitle+"\nDesicription:\n"+reqDetail+"\nStatus: "+reqStatus);
+//	}
 
 	public String getReqTitle() {
 		return reqTitle;
@@ -46,9 +41,9 @@ public class ClassRequest {
 	
 	// @override toString()
 	public String toString() {
-		String output1 = "Request Title: " + reqTitle + " ; ";
-		String output2 = "Request Detail: " + reqDetail + " ; ";
-		String output3 = "Request Status: " + reqStatus + ".";
+		String output1 = "Request Title: " + reqTitle + "\n";
+		String output2 = "Request Detail: " + reqDetail + "\n";
+		String output3 = "Request Status: " + reqStatus + "\n";
 		return output1+output2+output3;
 	}
 }

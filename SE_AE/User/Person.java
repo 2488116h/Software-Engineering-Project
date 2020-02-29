@@ -1,5 +1,7 @@
 package User;
 
+import java.io.PrintStream;
+
 public class Person {
 	
 	private String name;
@@ -44,6 +46,10 @@ public class Person {
 
 	public void setNIN(String nIN) {
 		NIN = nIN;
-	}	
+	}
+	
+	public String toString() {
+		return String.format("%s,%s,%s,%s",name, gender, NIN, date.toString());
+	}
 	
 }
