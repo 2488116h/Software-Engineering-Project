@@ -41,6 +41,8 @@ public class ClassDirector extends Account{
 	// print a list of all class requirement (new and old)
 	public void printListOfCR(PrintStream ps, ListOfClassReq ListOfCRs) {
 			ps.print(ListOfCRs.toString());
+			ps.print("New added:" + "\n");
+	//		ps.print(newRequests.toString());
 	}
 	
 }

@@ -1,4 +1,9 @@
 /Date.class
 /ListOfUser.class
 /User.class
+<<<<<<< Updated upstream
 /ListOfAccount.class
+=======
+/Account.class
+/Person.class
+>>>>>>> Stashed changes
