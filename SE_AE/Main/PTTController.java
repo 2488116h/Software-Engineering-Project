@@ -1,5 +1,6 @@
 package Main;
 
+
 import java.util.Scanner;
 
 public class PTTController {
@@ -38,12 +39,19 @@ public class PTTController {
 		if (menuNo == 1) {// 1. choose list all class requests.
 			view.listRequests();
 			mainMenu(role);
+			
 		} else if (menuNo == 2) {// 2. choose to show the list of teacher
 			view.listOfTeacher();
-			view.listOfSuitTeacher();
-		//	data.teacherData();
-		//	data.writeFile();
-			mainMenu(role);
+			view.createTeacherMenu();
+			
+			if(input.nextInt()==1) {
+				
+				if(!registerTR()) 
+					mainMenu(role);
+				
+			}
+		
+			
 		} else if (menuNo == 3) {
 			if(role == 1) { // 3. choose create class request.
 				if (!createReq()) {
@@ -55,7 +63,7 @@ public class PTTController {
 				int index=input.nextInt();
 				if(index==1) {// 1. choose list all submitted class requests.
 					if (model.getClassRequests().submittedList().size() == 0) {
-						view.noRequest();
+						view.noItems();
 						mainMenu(role);
 					}
 					view.submittedList_ClassReq();
@@ -77,12 +85,12 @@ public class PTTController {
 
 			} else if (role == 3) {// 3. choose to create a list of suitable teacher.
 				view.listOfTeacher();
-				view.createSuitTeacher();
+				view.addSuitTeacher();
 				int index = input.nextInt();
 				
 				while(index!=0) {// 
 					model.createSuitTeacher(model.getTeachers().getTeacher(index-1));
-					view.addedTeacher();
+					view.addNewSuitTeacher();
 					index = input.nextInt();
 			//		data.trainingReqData();
 			//		data.writeFile();
@@ -125,36 +133,44 @@ public class PTTController {
 	 	* 1. find a teacher or
 	 	* 2. register this new teacher into the suitable list
 	 	*/
-	public void registerTR() {
+	public boolean registerTR() {
+		boolean flag= true;
 		// prompt for entering NIN
-		view.createSuitTeacher();
+		view.createTeacher();
+		view.createNIN();
 		// User input: 
 		input = new Scanner(System.in);
 		String teacherNIN = input.next();
 		
 		// try to find matched teacher
-		if(model.getTRs().check(teacherNIN)) {
-			view.teacherExists(model.getTRs().checkName(teacherNIN));
+		if(model.getTeachers().containNIN(teacherNIN)) {
+			view.teacherExists(teacherNIN);
+			registerTR();
+			
 		}else {
-			// Guidance for creating a new teacher
-			view.createTeacherGuide1();
-			view.createTeacherGuide2();
-				// Name 
+			// Name 
+			view.createName();		
 			input = new Scanner(System.in);
-			String teacherName = input.next();
-				// Date of birth
-			view.createTeacherGuide3();
-			input = new Scanner(System.in);
+			String teacherName = input.nextLine();
+			// Date of birth
+			view.createBirthDate();
+		
 			int day = input.nextInt();
 			int month = input.nextInt();
 			int year = input.nextInt();
 				// Gender
-			view.createTeacherGuide4();
-			input = new Scanner(System.in);
-			String gender = input.next();
-			model.registerTeacher(teacherName, day, month, year, gender, teacherNIN);
-			view.addedTeacher();
+			view.createGender();
+		
+			int index = input.nextInt()-1;
+			String[] gender= {"male","female"};
+			model.registerTeacher(teacherName, day, month, year, gender[index], teacherNIN);
+			view.createTeacherMenu();
+			
+			if(input.nextInt()==1) {
+				registerTR();
+			}else flag=false;
 		}
+		return flag;
 	}
 	
 }

@@ -2,7 +2,6 @@ package Community;
 
 import java.io.PrintStream;
 
-import User.Date;
 import User.Account;
 
 public class PTTDirector extends Account{
@@ -20,7 +19,7 @@ public class PTTDirector extends Account{
 		if(obj instanceof ListOfTeacher) {// approve training request by add training information
 			ListOfTeacher trainingReq=(ListOfTeacher)obj;
 			for(Teacher teacher:trainingReq.getTeachers()) {
-				teacher.addTraining("attended 2020 term training");
+				teacher.setStatus("attended 2020 term training");
 			}
 			trainingReq.removeTeacher(null, 1);// clear all teachers in the training request list after approval
 		}			

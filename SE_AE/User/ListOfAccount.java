@@ -3,10 +3,10 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 
-public class ListOfUser {
+public class ListOfAccount {
 	private ArrayList<Account> users;
-	private Account u;
-	public ListOfUser() {
+
+	public ListOfAccount() {
 		users = new ArrayList<Account>();
 	}
 	
@@ -23,11 +23,9 @@ public class ListOfUser {
 	}
 	
 	public Account getUser(int index) {
-		return users.get(index);
-		
+		return users.get(index);		
 	}
-
-	
+		
 	public void print(PrintStream ps) {
 		for(Account u:users) {
 			u.print(ps);

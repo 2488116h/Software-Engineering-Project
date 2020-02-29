@@ -38,7 +38,7 @@ public class ListOfClassReq {
 	}
 
 	public void print(ArrayList<ClassRequest> list) {
-		for(ClassRequest req:list) {
+		for(ClassRequest req:list) 
 			req.print(System.out);
 		}
 

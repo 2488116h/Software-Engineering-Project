@@ -2,7 +2,6 @@ package Community;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ListOfTeacher {
 
@@ -15,18 +14,14 @@ public class ListOfTeacher {
 	public void addTeacher(Teacher teacher) {
 		teachers.add(teacher);
 	}
-	
-	public void removeTeacher(Teacher teacher,int arg) {
-		if(arg==1) {
+
+	public void removeTeacher(Teacher teacher, int arg) {
+		if (arg == 1) {
 			teachers.clear();
 		}
 		teachers.remove(teacher);
-		
+
 	}
-	
-//	public ArrayList<Teacher> getSuitTeachers() {
-//		return teachers;
-//	}
 
 	public ArrayList<Teacher> getTeachers() {
 		return teachers;
@@ -39,32 +34,20 @@ public class ListOfTeacher {
 	public int getTeachersSize() {
 		return teachers.size();
 	}
-	
+
+
 	public void print(PrintStream ps) {
-		Iterator<Teacher> it = teachers.iterator();
-		while(it.hasNext()) {
-			Teacher s = it.next();
-			System.out.print(s + " ");
-		}
+		for (Teacher t : teachers)
+			ps.printf("%d %s,%s,%s,%s,%s\n", teachers.indexOf(t) + 1, t.getName(), t.getGender(), t.getNIN(),
+					t.getDate().toString(), t.getStatus());
 	}
 
 	// check whether a teacher in the list or not
-	public boolean check(String NIN) {
-		for(int i=0;i<teachers.size();i++) {
-			if(teachers.get(i).getNIN() == NIN) {
-				return true;
-			}
+	public boolean containNIN(String NIN) {
+		for (Teacher t : teachers) {
+			return t.getNIN().equals(NIN);
 		}
 		return false;
-	}
-	
-	public String checkName(String NIN) {
-		for(int i=0;i<teachers.size();i++) {
-			if(teachers.get(i).getNIN() == NIN) {
-				return teachers.get(i).getName();
-			}
-		}
-		return "No name matches!";
 	}
 
 }

@@ -19,20 +19,18 @@ public class ClassDirector extends Account{
 	}
 
 	// find this teacher 
-	public boolean find(String teacherNIN, ListOfTeacher ListOfTRs) {
-		return ListOfTRs.check(teacherNIN);
-	}
+//	public boolean find(String teacherNIN, ListOfTeacher ListOfTRs) {
+//		return ListOfTRs.check(teacherNIN);
+//	}
 	
-	// create a new teacher: with default username and password, and attribute
-	public Teacher createTeacher(String n, Date d, String g, String NIN) {
+	/* create a new teacher: with default username and password, and attribute 
+	* and add a teacher in the list
+	*/
+	public void createTeacher(String n, Date d, String g, String NIN,ListOfTeacher ListOfTRs) {
 		Teacher tr = new Teacher(n, d, g, NIN);
-		return tr;
-	}
-	
-	// add a teacher in the list
-	public void addTeacher(Teacher tr, ListOfTeacher ListOfTRs) {
 		ListOfTRs.addTeacher(tr);
 	}
+	
 	
 	// create a new class request and add it to the list of Request
 	public void createCR(String reqTitle, String reqDetail, ListOfClassReq ListOfCRs) {

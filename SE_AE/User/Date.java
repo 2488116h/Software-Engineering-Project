@@ -20,4 +20,8 @@ public class Date {
 	public int getYear() {
 		return dob_y;
 	}
+	public String toString() {
+		return String.format("%02d/%02d/%d", dob_d,dob_m,dob_y);
+	}
+	
 }

@@ -3,14 +3,13 @@ package User;
 public class Person {
 	
 	private String name;
-	private Date d;
-	private String gender;
-	// NIN = National Insurance Number (UK)
-	private String NIN;
+	private Date date;
+	private String gender;	
+	private String NIN;// NIN = National Insurance Number (UK)
 	
-	public Person(String name, Date d, String gender, String NIN) {
+	public Person(String name, Date date, String gender, String NIN) {
 		this.name = name;
-		this.d = d;
+		this.date = date;
 		this.gender = gender;
 		this.NIN = NIN;
 	}
@@ -23,12 +22,12 @@ public class Person {
 		this.name = name;
 	}
 
-	public Date getD() {
-		return d;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setD(Date d) {
-		this.d = d;
+	public void setDate(Date d) {
+		this.date = d;
 	}
 
 	public String getGender() {
