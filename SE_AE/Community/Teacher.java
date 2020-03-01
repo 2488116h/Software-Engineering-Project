@@ -1,7 +1,5 @@
 package Community;
 
-import java.io.PrintStream;
-
 import User.*;
 
 public class Teacher extends Person {

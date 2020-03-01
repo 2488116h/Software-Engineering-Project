@@ -30,11 +30,16 @@ public class PTTDirector extends Account{
 		if(obj instanceof ClassRequest) {// disapprove class request by set the status to 'Disapproved'		
 			((ClassRequest) obj).setReqStatus(ClassRequest.status[2]);
 		}
-		// disapprove training request by clearing all teachers in the training request list 
+		// disapprove training request by clearing "pending" teachers in the training request list
+		// teachers who have been approved before will not be affected
 		if(obj instanceof ListOfTeacher) {
-			ListOfTeacher trainingReq=(ListOfTeacher)obj;		
-			trainingReq.removeTeacher(null, 1);
+			ListOfTeacher trainingReq=(ListOfTeacher)obj;
+			for(Teacher t:trainingReq.getTeachers()) {
+				if(t.getStatus().equals("pending"))
+				trainingReq.removeTeacher(t);
 		}
+			}
+			
 	}
 	
 	

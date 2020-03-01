@@ -14,6 +14,7 @@ public class ListOfClassReq {
 
 	public void add(ClassRequest req) {
 		ListOfCR.add(req);
+		req.setReqNo(ListOfCR.indexOf(req)+1);
 	}
 
 	public ClassRequest getClassReq(int index) {

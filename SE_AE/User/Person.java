@@ -1,7 +1,5 @@
 package User;
 
-import java.io.PrintStream;
-
 public class Person {
 	
 	private String name;

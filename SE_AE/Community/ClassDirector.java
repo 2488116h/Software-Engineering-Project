@@ -18,10 +18,6 @@ public class ClassDirector extends Account{
 		ps.print(" Class Director");
 	}
 
-	// find this teacher 
-//	public boolean find(String teacherNIN, ListOfTeacher ListOfTRs) {
-//		return ListOfTRs.check(teacherNIN);
-//	}
 	
 	/* create a new teacher: with default username and password, and attribute 
 	* and add a teacher in the list

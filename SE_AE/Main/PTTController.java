@@ -11,10 +11,10 @@ public class PTTController {
 	public PTTController(PTTModel model, PTTView view) {
 		this.model = model;
 		this.view = view;
-		data=new DataFile(model);
+		data = new DataFile(model);
 	}
 
-	public void login() {
+	public void start() {
 		input = new Scanner(System.in);
 		view.enterUsername();
 		String username = input.nextLine();
@@ -24,18 +24,17 @@ public class PTTController {
 		int role = model.login(username, password);
 		if (role == 0) {
 			view.loginFailed();
-			this.login();
+			this.start();
 
-		} else if(role==1){			
+		} else if (role == 1) {
 			classDirMenu(role);
-		}else if (role==2) {
+		} else if (role == 2) {
 			PTTdirMenu(role);
-		}else if(role==3) {
+		} else if (role == 3) {
 			adminMenu(role);
 		}
 
 	}
-
 
 	public void classDirMenu(int role) {
 		view.menu(role);
@@ -48,7 +47,8 @@ public class PTTController {
 
 		} else if (menuNo == 2) {// 2. choose to show the list of teacher
 			view.listOfTeacher();
-			classDirMenu(role);;
+			classDirMenu(role);
+			;
 
 		} else if (menuNo == 3) {// 3. choose create class request
 			createReq();
@@ -59,11 +59,11 @@ public class PTTController {
 			classDirMenu(role);
 		} else if (menuNo == 5) {// 5. choose logout
 			view.logout();
-			this.login();
+			this.start();
 		}
 
 	}
-	
+
 	public void adminMenu(int role) {
 		view.menu(role);
 		input = new Scanner(System.in);
@@ -87,17 +87,20 @@ public class PTTController {
 				model.createSuitTeacher(model.getTeachers().getTeacher(index - 1));
 				view.addNewSuitTeacher();
 				index = input.nextInt();
-				// data.trainingReqData();
-				 data.writeFile();
-			}		
+
+				data.writeFile();
+			}
 			adminMenu(role);
 
-		} else if (menuNo == 4) {// 4. choose logout
+		} else if (menuNo == 4) {// 4. check suitable teacher list
+			view.listOfSuitTeacher();
+			adminMenu(role);
+		} else if (menuNo == 5) {// 5. choose logout
 			view.logout();
-			this.login();
+			this.start();
 		}
 	}
-	
+
 	public void PTTdirMenu(int role) {
 		view.menu(role);
 		input = new Scanner(System.in);
@@ -112,7 +115,7 @@ public class PTTController {
 			PTTdirMenu(role);
 
 		} else if (menuNo == 3) {// 3. approve/disapprove requests
-		//	view.selectReq();
+			// view.selectReq();
 			if (model.getClassRequests().submittedList().size() == 0) {
 				view.noItems();
 				PTTdirMenu(role);
@@ -120,16 +123,19 @@ public class PTTController {
 			view.submittedList_ClassReq();
 			view.listOfSuitTeacher();
 			view.approval_menu();
-			
+
 			model.approval(input.nextInt());
 			// data.classReqData();
-			 data.writeFile();
-							
+			data.writeFile();
+
 			PTTdirMenu(role);
 
 		} else if (menuNo == 4) {// 4. choose logout
+			view.listOfSuitTeacher();
+			PTTdirMenu(role);
+		} else if (menuNo == 5) {// 5. choose logout
 			view.logout();
-			this.login();
+			this.start();
 		}
 	}
 
@@ -140,12 +146,12 @@ public class PTTController {
 	public void createReq() {
 		input = new Scanner(System.in);
 		view.createReqTitle();
-		String title = input.next();
+		String title = input.nextLine();
 		view.createReqDetails();
-		String detail = input.next();
+		String detail = input.nextLine();
 		model.creatRequest(title, detail);
 		view.submitteReq();
-//		data.classReqData();
+
 		data.writeFile();
 
 	}
@@ -184,6 +190,7 @@ public class PTTController {
 		int index = input.nextInt() - 1;
 		String[] gender = { "male", "female" };
 		model.registerTeacher(teacherName, day, month, year, gender[index], teacherNIN);
+		data.writeFile();
 		view.createFinined();
 
 	}

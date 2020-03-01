@@ -15,10 +15,7 @@ public class ListOfTeacher {
 		teachers.add(teacher);
 	}
 
-	public void removeTeacher(Teacher teacher, int arg) {
-		if (arg == 1) {
-			teachers.clear();
-		}
+	public void removeTeacher(Teacher teacher) {
 		teachers.remove(teacher);
 
 	}

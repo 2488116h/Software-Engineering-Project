@@ -6,6 +6,6 @@ public class Main{
 		PTTView view = new PTTView(model);
 		PTTController controller = new PTTController(model,view);
 		
-		controller.login();
+		controller.start();
 	}
 }

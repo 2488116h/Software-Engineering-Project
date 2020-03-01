@@ -22,6 +22,10 @@ public class ListOfAccount {
 		return users.size();
 	}
 	
+	public ArrayList<Account> getUsers() {
+		return users;
+	}
+
 	public Account getUser(int index) {
 		return users.get(index);		
 	}
