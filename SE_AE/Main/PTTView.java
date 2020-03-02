@@ -15,7 +15,7 @@ public class PTTView {
      * login and logout 
      */
 	public void enterUsername() {
-		System.out.println("------Welcom to PPT(Part Time Trainning) System------\n " + "------Authentication Required------\n" 
+		System.out.println("------Welcom to PPT(Part Time Trainning) System------\n " + "------Login Required------\n" 
 				+ "Please Enter Your Username:");
 	}
 
@@ -47,7 +47,7 @@ public class PTTView {
 			        "5.Create a new teacher",                        //for administrator
 			        "6.Log out"                                     //for administrator
 				};
-		System.out.println("-------Select Menu------");
+		System.out.println("------Select Menu------");
 		if(role==1) {//  Class Director menu
 			model.getClassDir().print(System.out);
 			System.out.println("\n"+menu[0]+"\n"+menu[1]+"\n"+menu[2]+"\n"+menu[3]+"\n"+menu[7]);
@@ -79,7 +79,7 @@ public class PTTView {
 			
 	public void listRequests() {
 		if(model.getClassRequests().getSize()!=0) {
-			System.out.print("-------List of Class Requests------\n"+model.getClassRequests().toString(model.getClassRequests().getListOfCR()));
+			System.out.print("------List of Class Requests------\n"+model.getClassRequests().toString(model.getClassRequests().getListOfCR()));
 		}else
 			noItems();
 	
@@ -89,12 +89,12 @@ public class PTTView {
  	*  check all the requests and make approval
  	*/
 	public void submittedList_ClassReq() {
-		System.out.print("-------List of Submitted Requests------\n"+model.getClassRequests().toString(model.getClassRequests().submittedList()));
+		System.out.print("------List of Submitted Requests------\n"+model.getClassRequests().toString(model.getClassRequests().submittedList()));
 		
 	}
 	
 	public void approval_menu() {
-		System.out.println("-------Select Menu------\n1.Approve\n2.Disapprove\n3.Return to the Main Menu");
+		System.out.println("------Select Menu------\n1.Approve\n2.Disapprove\n3.Return to the Main Menu");
 	}
 	public void approval_result(int index) {
 		if(index==1) {
@@ -114,7 +114,7 @@ public class PTTView {
 	// CD-1
 
 	public void createTeacherMenu() {
-		System.out.println("-------Select Menu------\n1.Create a new teacher\n2.Return to the Main Menu");
+		System.out.println("------Select Menu------\n1.Create a new teacher\n2.Return to the Main Menu");
 		
 	}
 	
@@ -145,7 +145,7 @@ public class PTTView {
 	
 	// CD-3-2 the total teacher list
 	public void listOfTeacher() {
-		System.out.println("-------List of Teachers------");
+		System.out.println("------List of Teachers------");
 		if(model.getTeachers().getTeachersSize()==0) {
 			noItems();
 		}else
@@ -157,7 +157,7 @@ public class PTTView {
  	*/
 
 	public void listOfSuitTeacher() {
-		System.out.println("-------List of Suitable Teachers------");
+		System.out.println("------List of Suitable Teachers------");
 		
 		if(model.getSuitTeachers().getTeachersSize()==0) {
 			noItems();
@@ -171,7 +171,7 @@ public class PTTView {
 	}
 	public void addNewSuitTeacher() {
 		this.listOfSuitTeacher();
-		System.out.println("-------A New Suitable Teacher added------\n Add another teacher by enter an index or enter '0' to return to the Main Menu");
+		System.out.println("------A New Suitable Teacher added------\n Add another teacher by enter an index or enter '0' to return to the Main Menu");
 	}
 	
 	
