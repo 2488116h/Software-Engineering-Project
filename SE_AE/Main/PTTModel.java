@@ -136,6 +136,7 @@ public class PTTModel {
 		return admin;
 	}
 
+	//Accessors
 	public ListOfTeacher getTeachers() {
 		return teachers;
 	}

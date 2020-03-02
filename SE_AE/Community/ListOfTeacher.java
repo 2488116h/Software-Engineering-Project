@@ -7,19 +7,29 @@ public class ListOfTeacher {
 
 	private ArrayList<Teacher> teachers;
 
+	// teacher list constructor
 	public ListOfTeacher() {
 		teachers = new ArrayList<>();
 	}
 
+	/**
+	 * add a teacher object to the list
+	 * @param teacher: a teacher object
+	 */
 	public void addTeacher(Teacher teacher) {
 		teachers.add(teacher);
 	}
 
+	/**
+	 * remove a teacher from the list
+	 * @param teacher: a teacher object
+	 */
 	public void removeTeacher(Teacher teacher) {
 		teachers.remove(teacher);
 
 	}
 
+	// Accessors
 	public ArrayList<Teacher> getTeachers() {
 		return teachers;
 	}
