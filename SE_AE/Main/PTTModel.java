@@ -91,6 +91,7 @@ public class PTTModel {
 	}
 		
 
+	//Accessors
 	public ListOfTeacher getTeachers() {
 		return teachers;
 	}
