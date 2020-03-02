@@ -33,6 +33,7 @@ public class PTTDirector extends Account{
 		// disapprove training request by clearing "pending" teachers in the training request list
 		// teachers who have been approved before will not be affected
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		if (obj instanceof ListOfTeacher) {
 			ListOfTeacher trainingReq = (ListOfTeacher) obj;
@@ -41,11 +42,16 @@ public class PTTDirector extends Account{
 					trainingReq.removeTeacher(t);
 			}
 =======
+=======
+>>>>>>> parent of 790501d... final updated
 		if(obj instanceof ListOfTeacher) {
 			ListOfTeacher trainingReq=(ListOfTeacher)obj;
 			for(Teacher t:trainingReq.getTeachers()) {
 				if(t.getStatus().equals("pending"))
 				trainingReq.removeTeacher(t);
+<<<<<<< HEAD
+>>>>>>> parent of 790501d... final updated
+=======
 >>>>>>> parent of 790501d... final updated
 		}
 			}
