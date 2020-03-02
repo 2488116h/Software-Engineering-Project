@@ -97,7 +97,7 @@ public class PTTController {
 			adminMenu(role);
 		}else if(menuNo == 5){// 5. choose create new teacher
 			registerTR();
-			classDirMenu(role);
+			adminMenu(role);
 		} else if (menuNo == 6) {// 6. choose logout
 			view.logout();
 			this.start();

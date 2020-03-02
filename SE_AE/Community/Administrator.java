@@ -21,6 +21,14 @@ public class Administrator extends Account {
 		
 	}
 	
+	/* create a new teacher: with default username and password, and attribute 
+	* and add a teacher in the list
+	*/
+	public void createTeacher(String n, Date d, String g, String NIN,ListOfTeacher ListOfTRs) {
+		Teacher tr = new Teacher(n, d, g, NIN);
+		ListOfTRs.addTeacher(tr);
+	}
+	
 	/**
 	 * print the position of the user
 	 */

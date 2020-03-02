@@ -7,5 +7,7 @@ user03,1,class Community.Administrator
 2,test02,It should be an English teacher,Approved
 *name,gender,nin,birth_day,birth_month,birth_year,status
 yoyo ho,male,n123345,12,3,1999,attended 2020 term training
+momo ho,female,n123456,2,3,1999,Pending
+Jay Chow,male,n1234553,2,12,1998,Pending
 *name,gender,nin,birth_day,birth_month,birth_year,status
 yoyo ho,male,n123345,12,3,1999,attended 2020 term training
