@@ -14,6 +14,7 @@ public class Person {
 		this.NIN = NIN;
 	}
 
+	// getters and setters
 	public String getName() {
 		return name;
 	}
@@ -46,6 +47,7 @@ public class Person {
 		NIN = nIN;
 	}
 	
+	// override toString method to return person details
 	public String toString() {
 		return String.format("%s,%s,%s,%s",name, gender, NIN, date.toString());
 	}

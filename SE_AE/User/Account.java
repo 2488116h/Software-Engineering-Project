@@ -13,15 +13,12 @@ public class Account {
 	
 	}
 	
-	public void print(PrintStream ps) {
-		ps.print(String.format("Hi, "+username));
-	}
-	
+	// getter for password
 	public String getPassword() {
 		return password;
 	}	
 
-	
+	// getter for username
 	public String getUsername() {
 		return username;
 	}
@@ -33,6 +30,11 @@ public class Account {
 	// setter: account password
 	public void setPassword(String p) {
 		password = p;
+	}
+	
+	// print username
+	public void print(PrintStream ps) {
+		ps.print(String.format("Hi, "+username));
 	}
 
 }

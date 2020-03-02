@@ -21,8 +21,8 @@ public class Teacher extends Person {
 		return status;
 	}
 
-	public String toString() {
-		
+	// override toString method
+	public String toString() {	
 		return super.toString()+","+status;		
 
 	}
