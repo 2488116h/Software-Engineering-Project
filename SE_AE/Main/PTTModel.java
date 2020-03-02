@@ -17,7 +17,11 @@ public class PTTModel {
 		classRequests = new ListOfClassReq();
 		teachers = new ListOfTeacher();
 		suitTeachers = new ListOfTeacher();
-
+		
+		// initialize user accounts in case data file is missing or empty
+		this.createUser("user01", "1", "ClassDirector");
+		this.createUser("user02", "1", "PTTDirector");
+		this.createUser("user03", "1", "Administrator");
 	}
 
 	// according to the username and password , method return the results of login (
