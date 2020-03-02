@@ -7,14 +7,24 @@ public class ListOfTeacher {
 
 	private ArrayList<Teacher> teachers;
 
+	// teacher list constructor
 	public ListOfTeacher() {
 		teachers = new ArrayList<>();
 	}
 
+	/**
+	 * add a teacher object to the list
+	 * @param teacher: a teacher object
+	 */
 	public void addTeacher(Teacher teacher) {
 		teachers.add(teacher);
 	}
 
+	/**
+	 * remove a teacher from the list
+	 * @param teacher: a teacher object
+	 * @param arg: set an int if its value is 1 then clear the list
+	 */
 	public void removeTeacher(Teacher teacher, int arg) {
 		if (arg == 1) {
 			teachers.clear();
@@ -23,6 +33,7 @@ public class ListOfTeacher {
 
 	}
 
+	// Accessors
 	public ArrayList<Teacher> getTeachers() {
 		return teachers;
 	}
