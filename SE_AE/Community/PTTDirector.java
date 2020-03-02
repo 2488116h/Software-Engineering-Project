@@ -39,18 +39,8 @@ public class PTTDirector extends Account{
 				if (t.getStatus().equals("Pending"))
 					trainingReq.removeTeacher(t);
 			}
-
-		if(obj instanceof ListOfTeacher) {
-			ListOfTeacher trainingReq=(ListOfTeacher)obj;
-			for(Teacher t:trainingReq.getTeachers()) {
-				if(t.getStatus().equals("pending"))
-				trainingReq.removeTeacher(t);
-
-		}
-			}
-
+		}	
 	}
-
 
 	public void print(PrintStream ps) {
 		super.print(ps);
