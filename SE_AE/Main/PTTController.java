@@ -83,8 +83,10 @@ public class PTTController {
 			view.addSuitTeacher();
 			int index = input.nextInt();
 
-			while (index != 0) {//
-				model.createSuitTeacher(model.getTeachers().getTeacher(index - 1));
+			while (index != 0) {// check whether added teacher is already in the list
+				if(!model.createSuitTeacher(model.getTeachers().getTeacher(index - 1))) {
+					view.failToAdd();
+				};
 				view.addNewSuitTeacher();
 				index = input.nextInt();
 

@@ -172,6 +172,9 @@ public class PTTView {
 		this.listOfSuitTeacher();
 		System.out.println("------A New Suitable Teacher added------\n Add another teacher by enter an index or enter '0' to return to the Main Menu");
 	}
+	public void failToAdd() {
+		System.out.println("Teacher is already in the list!");
+	}
 
 
     // helper method

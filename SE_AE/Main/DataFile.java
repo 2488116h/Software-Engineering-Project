@@ -62,11 +62,20 @@ public class DataFile {
 					if (model.getTeachers().getTeacher(i - 1).getNIN().equals(content[2]))
 						model.getSuitTeachers().addTeacher(model.getTeachers().getTeacher(i - 1));
 				}
+			}else {
+				// initialize user accounts in case data file is empty
+				model.createUser("user01", "1", "ClassDirector");
+				model.createUser("user02", "1", "PTTDirector");
+				model.createUser("user03", "1", "Administrator");
 			}
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			// initialize user accounts in case data file is missing
+			model.createUser("user01", "1", "ClassDirector");
+			model.createUser("user02", "1", "PTTDirector");
+			model.createUser("user03", "1", "Administrator");
 		}
 
 	}

@@ -15,9 +15,13 @@ public class Administrator extends Account {
 	 * @param lot: list of teacher for training
 	 * @param teacher: a teacher object
 	 */
-	public void createSuitTeacher(ListOfTeacher lot,Teacher teacher) {
-		
-		lot.addTeacher(teacher);
+	public boolean createSuitTeacher(ListOfTeacher lot,Teacher teacher) {
+		if(lot.getTeachers().contains(teacher)) {
+			return false;
+		}else {
+			lot.addTeacher(teacher);
+			return true;
+		}		
 		
 	}
 	

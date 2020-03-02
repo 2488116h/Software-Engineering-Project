@@ -1,13 +1,1 @@
-username,password,userType,,,,
-user01,1,class Community.ClassDirector,,,,
-user02,1,class Community.PTTDirector,,,,
-user03,1,class Community.Administrator,,,,
-*reqNo,reqTitle,reqDetail,status,,,
-1,2019 Semester 1 Math,Two Math teachers needed,Approved,,,
-*name,gender,nin,birth_day,birth_month,birth_year,status
-Alice,female,123456,10,7,1998,attended 2020 term training
-Benny,male,123457,29,10,1996,attended 2020 term training
-Bill,male,123458,15,9,1997,Pending
-*name,gender,nin,birth_day,birth_month,birth_year,status
-Alice,female,123456,10,7,1998,attended 2020 term training
-Benny,male,123457,29,10,1996,attended 2020 term training
+username,password,userType,,,,user01,1,class Community.ClassDirector,,,,user02,1,class Community.PTTDirector,,,,user03,1,class Community.Administrator,,,,*reqNo,reqTitle,reqDetail,status,,,1,2019 Semester 1 Math,Two Math teachers needed,Approved,,,*name,gender,nin,birth_day,birth_month,birth_year,statusAlice,female,123456,10,7,1998,attended 2020 term trainingBenny,male,123457,29,10,1996,attended 2020 term trainingBill,male,123458,15,9,1997,Pending*name,gender,nin,birth_day,birth_month,birth_year,statusAlice,female,123456,10,7,1998,attended 2020 term trainingBenny,male,123457,29,10,1996,attended 2020 term training
