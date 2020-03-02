@@ -95,7 +95,10 @@ public class PTTController {
 		} else if (menuNo == 4) {// 4. check suitable teacher list
 			view.listOfSuitTeacher();
 			adminMenu(role);
-		} else if (menuNo == 5) {// 5. choose logout
+		}else if(menuNo == 5){// 5. choose create new teacher
+			registerTR();
+			classDirMenu(role);
+		} else if (menuNo == 6) {// 6. choose logout
 			view.logout();
 			this.start();
 		}
