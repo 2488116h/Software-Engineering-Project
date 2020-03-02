@@ -12,7 +12,7 @@ public class ClassDirector extends Account{
 		super(u, p);
 	}
 
-	// super
+	// print user's role
 	public void print(PrintStream ps) {
 		super.print(ps);
 		ps.print(" Class Director");
