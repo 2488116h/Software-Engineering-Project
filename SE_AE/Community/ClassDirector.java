@@ -15,7 +15,7 @@ public class ClassDirector extends Account{
 	// print user's role
 	public void print(PrintStream ps) {
 		super.print(ps);
-		ps.print(" (Class Director)");
+		ps.print(" Class Director");
 	}
 
 	
