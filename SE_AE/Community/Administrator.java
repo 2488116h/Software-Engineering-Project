@@ -34,7 +34,7 @@ public class Administrator extends Account {
 	 */
 	public void print(PrintStream ps) {
 		super.print(ps);
-		ps.print(" Administrator");
+		ps.print(" (Administrator)");
 	}
 
 }

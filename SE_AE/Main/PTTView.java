@@ -15,8 +15,7 @@ public class PTTView {
      * login and logout 
      */
 	public void enterUsername() {
-		System.out.println("------Welcom to PPT(Part Time Trainning) System------\n " + "------Authentication Required------\n" 
-				+ "Please Enter Your Username:");
+		System.out.println("------Login to PPT(Part Time Trainning) System------\n " + "Please Enter Your Username:");
 	}
 
 	public void enterPassword() {
@@ -70,7 +69,7 @@ public class PTTView {
 	}
 
 	public void createReqDetails() {
-		System.out.println("Please fill int the details of this request:");
+		System.out.println("Please fill in the details of this request:");
 	}
 
 	public void submitteReq() {
