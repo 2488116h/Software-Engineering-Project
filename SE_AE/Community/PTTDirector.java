@@ -19,7 +19,7 @@ public class PTTDirector extends Account{
 		if(obj instanceof ListOfTeacher) {// approve training request by add training information
 			ListOfTeacher trainingReq=(ListOfTeacher)obj;
 			for(Teacher teacher:trainingReq.getTeachers()) {
-				teacher.setStatus("attended 2020 term training");
+				teacher.setStatus("Attended 2020 term training");
 			}
 		}			
 		
@@ -35,7 +35,7 @@ public class PTTDirector extends Account{
 		if(obj instanceof ListOfTeacher) {
 			ListOfTeacher trainingReq=(ListOfTeacher)obj;
 			for(Teacher t:trainingReq.getTeachers()) {
-				if(t.getStatus().equals("pending"))
+				if(t.getStatus().equals("Pending"))
 				trainingReq.removeTeacher(t);
 		}
 			}
@@ -45,7 +45,7 @@ public class PTTDirector extends Account{
 	
 	public void print(PrintStream ps) {
 		super.print(ps);
-		ps.print(" PPT Director");
+		ps.print(" (PPT Director)");
 	}
 
 }

@@ -34,7 +34,7 @@ public class Account {
 	
 	// print username
 	public void print(PrintStream ps) {
-		ps.print(String.format("Hi, "+username));
+		ps.print(String.format("Hi, "+ "User: " + username));
 	}
 
 }
