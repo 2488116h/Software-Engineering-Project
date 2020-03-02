@@ -31,6 +31,7 @@ public class PTTDirector extends Account {
 		}
 		// disapprove training request by clearing "Pending" teachers in the training request list
 		// teachers who have been approved before will not be affected
+
 		if (obj instanceof ListOfTeacher) {
 			ListOfTeacher trainingReq = (ListOfTeacher) obj;
 			for (Teacher t : trainingReq.getTeachers()) {
