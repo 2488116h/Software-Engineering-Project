@@ -42,7 +42,9 @@ public class PTTView {
 				"3.approve/disapprove requests",               //  PTT Director functions				
 				"3.find suitable teachers to attend training", //  Administrator functions				
 				"4.check suitable teacher list",
-				"5.logout"                               
+				"5.logout",
+			        "5.create new teacher",                        //for administrator
+			        "6.logout"                                     //for administrator
 				};
 		System.out.println("-------Select Menu------");
 		if(role==1) {//  Class Director menu
@@ -55,7 +57,7 @@ public class PTTView {
 		}
 		else if(role==3){ //  Administrator menu   
 			model.getAdmin().print(System.out);
-			System.out.println("\n"+menu[0]+"\n"+menu[1]+"\n"+menu[5]+"\n"+menu[6]+"\n"+menu[7]);
+			System.out.println("\n"+menu[0]+"\n"+menu[1]+"\n"+menu[5]+"\n"+menu[6]+"\n"+menu[8]+"\n"+menu[9]);
 		}
 	}
 
